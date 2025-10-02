@@ -33,21 +33,22 @@
     /* Module buttons */
     .es101-card {
       text-align: center;
-      flex: 0 1 160px;
+      flex: 0 1 200px;
       position: relative;
     }
     .es101-card a {
       display: flex;
-      width: 160px;
-      height: 160px;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 200px;
+      height: 200px;
       color: #ffffff;
       font-weight: bold;
       text-decoration: none;
       border-radius: 12px;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
       position: relative;
+      padding: 10px;
+      box-sizing: border-box;
     }
     .es101-card a:hover,
     .es101-card a:focus {
@@ -59,34 +60,34 @@
       display: flex;
       justify-content: center;
       gap: 6px;
-      margin-top: 6px;
+      margin-bottom: 4px;
     }
     .es101-progress-circle {
       width: 14px;
       height: 14px;
-      border: 2px solid #000;
+      border: 2px solid #fff;
       border-radius: 50%;
-      background: #fff;
+      background: transparent;
       cursor: pointer;
     }
     .es101-progress-circle.filled {
-      background: #000;
+      background: #fff;
     }
 
-    /* Progress text inside the button */
+    /* Progress text */
     .es101-progress-text {
-      position: absolute;
-      bottom: 8px;
-      left: 50%;
-      transform: translateX(-50%);
       font-size: 12px;
       color: #fff;
-      background: rgba(0,0,0,0.5);
-      padding: 2px 6px;
-      border-radius: 6px;
-      z-index: 3;
-      white-space: nowrap;
-      pointer-events: none;
+      margin-bottom: 10px;
+    }
+
+    /* Module text */
+    .es101-module-text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -115,71 +116,81 @@
     <!-- Module 1 -->
     <div class="es101-card">
       <a href="#" style="background-color:#196719;" aria-label="Module 1: Earth Systems">
-        Module 1<br>Earth Systems
+        <div class="es101-progress" data-module="m1">
+          <span class="es101-progress-circle"></span>
+          <span class="es101-progress-circle"></span>
+          <span class="es101-progress-circle"></span>
+          <span class="es101-progress-circle"></span>
+        </div>
         <div class="es101-progress-text" aria-live="polite"></div>
+        <div class="es101-module-text">
+          Module 1<br>Earth Systems<br><small>Explore Earth's interacting systems: geosphere, hydrosphere, atmosphere, biosphere.</small>
+        </div>
       </a>
-      <div class="es101-progress" data-module="m1">
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-      </div>
     </div>
 
     <!-- Module 2 -->
     <div class="es101-card">
       <a href="#" style="background-color:#21633e;" aria-label="Module 2: Plate Tectonics">
-        Module 2<br>Plate Tectonics
+        <div class="es101-progress" data-module="m2">
+          <span class="es101-progress-circle"></span>
+          <span class="es101-progress-circle"></span>
+          <span class="es101-progress-circle"></span>
+          <span class="es101-progress-circle"></span>
+        </div>
         <div class="es101-progress-text" aria-live="polite"></div>
+        <div class="es101-module-text">
+          Module 2<br>Plate Tectonics<br><small>Examine the movements of Earth's plates and their role in shaping the surface.</small>
+        </div>
       </a>
-      <div class="es101-progress" data-module="m2">
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-      </div>
     </div>
 
     <!-- Module 3 -->
     <div class="es101-card">
       <a href="#" style="background-color:#0b605f;" aria-label="Module 3: Rocks and Minerals">
-        Module 3<br>Rocks &amp; Minerals
+        <div class="es101-progress" data-module="m3">
+          <span class="es101-progress-circle"></span>
+          <span class="es101-progress-circle"></span>
+          <span class="es101-progress-circle"></span>
+          <span class="es101-progress-circle"></span>
+        </div>
         <div class="es101-progress-text" aria-live="polite"></div>
+        <div class="es101-module-text">
+          Module 3<br>Rocks &amp; Minerals<br><small>Learn how rocks and minerals form, transform, and tell Earth's history.</small>
+        </div>
       </a>
-      <div class="es101-progress" data-module="m3">
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-      </div>
     </div>
 
     <!-- Module 4 -->
     <div class="es101-card">
       <a href="#" style="background-color:#2f5879;" aria-label="Module 4: Atmosphere">
-        Module 4<br>Atmosphere
+        <div class="es101-progress" data-module="m4">
+          <span class="es101-progress-circle"></span>
+          <span class="es101-progress-circle"></span>
+          <span class="es101-progress-circle"></span>
+          <span class="es101-progress-circle"></span>
+        </div>
         <div class="es101-progress-text" aria-live="polite"></div>
+        <div class="es101-module-text">
+          Module 4<br>Atmosphere<br><small>Discover the composition, structure, and dynamics of Earth's atmosphere.</small>
+        </div>
       </a>
-      <div class="es101-progress" data-module="m4">
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-      </div>
     </div>
 
     <!-- Module 5 -->
     <div class="es101-card">
       <a href="#" style="background-color:#00458a;" aria-label="Module 5: Oceans and Climate">
-        Module 5<br>Oceans &amp; Climate
+        <div class="es101-progress" data-module="m5">
+          <span class="es101-progress-circle"></span>
+          <span class="es101-progress-circle"></span>
+          <span class="es101-progress-circle"></span>
+          <span class="es101-progress-circle"></span>
+        </div>
         <div class="es101-progress-text" aria-live="polite"></div>
+        <div class="es101-module-text">
+          Module 5<br>Oceans &amp; Climate<br><small>Investigate ocean currents, climate systems, and their global impacts.</small>
+        </div>
       </a>
-      <div class="es101-progress" data-module="m5">
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-      </div>
     </div>
   </div>
 
@@ -218,7 +229,8 @@
         updateProgress();
 
         dots.forEach((dot, idx) => {
-          dot.addEventListener('click', function() {
+          dot.addEventListener('click', function(e) {
+            e.preventDefault(); // prevent link activation
             dot.classList.toggle('filled');
             updateProgress();
           });
