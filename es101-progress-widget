@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Earth Science 101 — Modules</title>
+<style>
+  /* Basic page layout matching your Canvas Home look */
+  body { font-family: Arial, sans-serif; margin:0; padding:24px; background:#fff; color:#222; }
+  .container { max-width:900px; margin:0 auto; }
+  .hero { text-align:center; margin-bottom:12px; }
+  h2.course-title { margin-bottom:30px; font-size:28px; }
+  .lead { font-size:16px; max-width:760px; margin:0 auto 24px; line-height:1.5; }
+
+  /* Breadcrumb */
+  .breadcrumb { text-align:center; margin-bottom:15px; font-size:14px; color:#888; }
+
+  /* Module grid */
+  .module-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-bottom:40px; }
+  .module-card { flex:0 1 160px; text-align:center; position:relative; }
+
+  /* The visual card anchors - dark backgrounds, white text, same as original */
+  .card-link {
+    display:flex; width:160px; height:160px; color:#ffffff; text-decoration:none; border-radius:12px;
+    align-items:center; justify-content:center; text-align:center; font-weight:700; font-size:15px; line-height:1.15;
+  }
+
+  .objectives { font-size:14px; margin-top:5px; text-align:center; }
+
+  /* Tools block */
+  .tools { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-bottom:40px; }
+  .tool { display:flex; width:160px; height:90px; color:#ffffff; text-decoration:none; border-radius:12px;
+          align-items:center; justify-content:center; text-align:center; font-weight:700; font-size:15px; }
+
+  /* Progress overlay (dots + text) rendered on top of the card */
+  .es101-progress-wrapper { position:relative; display:inline-block; line-height:0; }
+  .es101-dots { position:absolute; top:8px; left:50%; transform:translateX(-50%); display:flex; gap:8px; z-index:3; }
+  .es101-dot { width:18px; height:18px; border-radius:50%; border:2px solid #fff; background:transparent; cursor:pointer; padding:0; box-sizing:border-box; }
+  .es101-dot.active { background:#ffffff; }
+  .es101-dot:focus { outline:3px solid #ffd966; outline-offset:3px; }
+  .es101-progress-text { position:absolute; top:-12px; left:50%; transform:translateX(-50%); font-size:12px; color:#fff; z-index:3; pointer-events:none; white-space:nowrap; text-shadow:0 1px 2px rgba(0,0,0,0.6); }
+
+  /* small responsive */
+  @media (max-width:520px) { .module-card { flex:0 1 140px; } .card-link { width:140px; height:140px; } .tool { width:140px; height:80px; } }
+</style>
+</head>
+<body>
+  <div class="container" role="main">
+    <div class="hero">
+      <h2 class="course-title">🌎<br/>Welcome to Earth Science 101</h2>
+      <p class="lead">Welcome to <strong>Earth Science 101</strong>. This course explores the processes that shape our planet — plate tectonics, rock formation, atmosphere, oceans, and climate. Our goal is to build a strong foundation in Earth science concepts while encouraging you to think critically about Earth systems.</p>
+    </div>
+
+    <div class="breadcrumb" aria-hidden="true">Home › <span>Modules</span></div>
+
+    <h2 id="modules-section" tabindex="-1" style="text-align:center; margin:20px 0 10px;">Modules</h2>
+    <p style="text-align:center; font-size:16px; margin-bottom:18px;">Each <strong>module</strong> includes learning objectives, readings, media, assignments, and discussions.</p>
+
+    <div class="module-grid" role="list" aria-label="Course modules">
+      <!-- Module 1 -->
+      <div class="module-card" role="listitem">
+        <div class="es101-progress-wrapper">
+          <a class="card-link" href="https://canvas.instructure.com/courses/12988987/modules/20955574" target="_top" style="background-color:#196719;"
+             aria-describedby="mod1-desc" data-moduleid="20955574">Module 1<br/>Earth Systems</a>
+        </div>
+        <p id="mod1-desc" class="objectives"><strong>Objectives:</strong> Understand Earth's layers, rock cycle, and energy systems.</p>
+      </div>
+
+      <!-- Module 2 -->
+      <div class="module-card" role="listitem">
+        <div class="es101-progress-wrapper">
+          <a class="card-link" href="https://canvas.instructure.com/courses/12988987/modules/20955580" target="_top" style="background-color:#21633e;"
+             aria-describedby="mod2-desc" data-moduleid="20955580">Module 2<br/>Plate Tectonics</a>
+        </div>
+        <p id="mod2-desc" class="objectives"><strong>Objectives:</strong> Explore tectonic plate boundaries, earthquakes, and volcanoes.</p>
+      </div>
+
+      <!-- Module 3 -->
+      <div class="module-card" role="listitem">
+        <div class="es101-progress-wrapper">
+          <a class="card-link" href="https://canvas.instructure.com/courses/12988987/modules/20968541" target="_top" style="background-color:#0b605f;"
+             aria-describedby="mod3-desc" data-moduleid="20968541">Module 3<br/>Rocks &amp; Minerals</a>
+        </div>
+        <p id="mod3-desc" class="objectives"><strong>Objectives:</strong> Identify common rocks and minerals and their formation processes.</p>
+      </div>
+
+      <!-- Module 4 -->
+      <div class="module-card" role="listitem">
+        <div class="es101-progress-wrapper">
+          <a class="card-link" href="https://canvas.instructure.com/courses/12988987/modules/20968544" target="_top" style="background-color:#2f5879;"
+             aria-describedby="mod4-desc" data-moduleid="20968544">Module 4<br/>Atmosphere</a>
+        </div>
+        <p id="mod4-desc" class="objectives"><strong>Objectives:</strong> Examine atmospheric layers, weather systems, and climate processes.</p>
+      </div>
+
+      <!-- Module 5 -->
+      <div class="module-card" role="listitem">
+        <div class="es101-progress-wrapper">
+          <a class="card-link" href="https://canvas.instructure.com/courses/12988987/modules/20968545" target="_top" style="background-color:#00458a;"
+             aria-describedby="mod5-desc" data-moduleid="20968545">Module 5<br/>Oceans &amp; Climate</a>
+        </div>
+        <p id="mod5-desc" class="objectives"><strong>Objectives:</strong> Understand ocean circulation, climate interactions, and human impacts.</p>
+      </div>
+    </div>
+
+    <div style="max-width:700px; margin:0 auto; text-align:left;">
+      <p style="font-size:16px; margin-bottom:10px;">To <strong>succeed</strong> in this course:</p>
+      <ul style="font-size:16px; line-height:1.6;">
+        <li><strong>Start with the module overview</strong> to understand the key questions and goals.</li>
+        <li><strong>Read carefully</strong>: most content here is text-based, requiring close reading and note-taking.</li>
+        <li><strong>Engage in discussions</strong> with your peers to test your understanding and share perspectives.</li>
+        <li><strong>Complete assignments and quizzes</strong> at the end of each module to check mastery of the material.</li>
+        <li><strong>Return to this homepage</strong> to navigate between modules and course tools.</li>
+      </ul>
+    </div>
+
+    <div class="breadcrumb" style="margin-top:20px;">Home › Other Resources</div>
+
+    <h2 id="resources-section" tabindex="-1" style="text-align:center; margin:20px 0 20px;">Other Course Resources</h2>
+    <p style="text-align:center; font-size:16px; margin-bottom:12px;">Common course areas:</p>
+
+    <div class="tools" role="navigation" aria-label="Course tools">
+      <a class="tool" href="https://canvas.instructure.com/courses/12988987/assignments" target="_top" style="background:#4F1A9E;">Assignments</a>
+      <a class="tool" href="https://canvas.instructure.com/courses/12988987/discussion_topics" target="_top" style="background:#701192;">Discussions</a>
+      <a class="tool" href="https://canvas.instructure.com/courses/12988987/quizzes" target="_top" style="background:#871490;">Quizzes</a>
+    </div>
+
+    <p style="text-align:center; font-size:14px; color:#444;">Use this homepage as your central hub. Each week: check the module overview first, then proceed through readings, discussions, and assignments in order.</p>
+  </div>
+
+<script>
+/* Progress dots + per-module text (localStorage persistence)
+   Keys: course_progress_module_<moduleId>  (JSON array of 4 booleans) */
+(function(){
+  function readState(id){
+    try { var raw = localStorage.getItem('course_progress_module_' + id); return raw ? JSON.parse(raw) : null; }
+    catch(e){ return null; }
+  }
+  function writeState(id, arr){
+    try { localStorage.setItem('course_progress_module_' + id, JSON.stringify(arr)); }
+    catch(e){}
+  }
+
+  // initialize: find each .es101-progress-wrapper next to a card-link
+  document.querySelectorAll('.es101-progress-wrapper').forEach(function(wrapper){
+    var anchor = wrapper.querySelector('.card-link');
+    if (!anchor) return;
+    var moduleId = anchor.getAttribute('data-moduleid') || anchor.getAttribute('href').match(/modules\\/(\\d+)/)?.[1];
+    if (!moduleId) return;
+
+    // if wrapper already has dots (avoid double-run)
+    if (wrapper.querySelector('.es101-dots')) return;
+
+    // create progress text element
+    var ptext = document.createElement('div');
+    ptext.className = 'es101-progress-text';
+    ptext.setAttribute('aria-live','polite');
+    wrapper.appendChild(ptext);
+
+    // create dots container
+    var dots = document.createElement('div');
+    dots.className = 'es101-dots';
+    dots.setAttribute('role','group');
+    var label = (anchor.textContent || ('Module ' + moduleId)).trim().replace(/\\s+/g,' ');
+    dots.setAttribute('aria-label', label + ' progress: 4 steps');
+    wrapper.appendChild(dots);
+
+    // load saved matrix
+    var saved = readState(moduleId);
+    if (!Array.isArray(saved) || saved.length !== 4) saved = [false,false,false,false];
+
+    function updateText(){ var c = saved.reduce((s,v)=> s + (v?1:0),0); ptext.textContent = c + ' / 4 steps completed'; ptext.setAttribute('aria-label', label + ' progress: ' + c + ' of 4 steps completed'); }
+
+    // create dots
+    for (let i=0;i<4;i++){
+      const btn = document.createElement('button');
+      btn.type='button';
+      btn.className='es101-dot' + (saved[i]? ' active':'');
+      btn.setAttribute('aria-pressed', saved[i]? 'true':'false');
+      btn.setAttribute('aria-label', label + ' — step ' + (i+1) + ' of 4' + (saved[i]? ', completed': ', not completed'));
+      btn.dataset.index = i;
+      btn.addEventListener('click', function(){
+        const idx = parseInt(this.dataset.index,10);
+        saved[idx] = !saved[idx];
+        if (saved[idx]) { this.classList.add('active'); this.setAttribute('aria-pressed','true'); this.setAttribute('aria-label', label + ' — step ' + (idx+1) + ' of 4, completed'); }
+        else { this.classList.remove('active'); this.setAttribute('aria-pressed','false'); this.setAttribute('aria-label', label + ' — step ' + (idx+1) + ' of 4, not completed'); }
+        writeState(moduleId,saved);
+        updateText();
+      });
+      dots.appendChild(btn);
+    }
+    updateText();
+  });
+
+  // expose API for debugging
+  window.__es101Progress = {
+    get: function(id){ return readState(id); },
+    clear: function(id){ localStorage.removeItem('course_progress_module_' + id); location.reload(); },
+    clearAll: function(){ Object.keys(localStorage).forEach(k=>{ if (k.indexOf('course_progress_module_')===0) localStorage.removeItem(k); }); location.reload(); }
+  };
+})();
+</script>
+</body>
+</html>
