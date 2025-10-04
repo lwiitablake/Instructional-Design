@@ -346,5 +346,22 @@
     });
   </script>
 
+  <script>
+  const iframe = document.getElementById('es101-iframe');
+
+  function resizeIframe() {
+    if (iframe.contentWindow.document.body) {
+      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+    }
+  }
+
+  iframe.addEventListener('load', () => {
+    resizeIframe();
+    // optional: resize on content change (if needed)
+    setInterval(resizeIframe, 500); // keeps iframe height updated dynamically
+  });
+  </script>
+
+
 </body>
 </html>
