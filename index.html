@@ -1,177 +1,206 @@
-<!-- Accessible Module Page with Progress Indicators and Learning Objectives (Fixed Overlap) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Earth Science Modules</title>
 <style>
-  .es101-container {
+  body {
+    font-family: "Open Sans", Arial, sans-serif;
+    background-color: #f6f6f6;
+    color: #222;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    text-align: center;
+    margin-top: 30px;
+    color: #003366;
+  }
+
+  .es101-modules {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
     justify-content: center;
-    font-family: Arial, sans-serif;
+    gap: 20px;
+    padding: 20px;
   }
 
   .es101-card {
-    width: 260px;
-    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: center;
+    width: 240px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
 
   .es101-card a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    display: block;
     position: relative;
     color: #fff;
     font-weight: bold;
     text-decoration: none;
-    padding: 18px 10px 15px;
+    padding: 20px 10px 15px;
     border-radius: 12px;
     text-align: center;
-    min-height: 140px;
+    min-height: 150px;
   }
 
   .es101-progress {
     display: flex;
     justify-content: center;
-    margin-bottom: 6px;
-    gap: 5px;
+    gap: 8px;
+    margin-bottom: 10px;
   }
 
-  .es101-progress-circle {
-    width: 14px;
-    height: 14px;
+  .es101-progress .dot {
+    width: 16px;
+    height: 16px;
     border-radius: 50%;
-    background-color: #fff;
-    opacity: 0.3;
+    border: 2px solid #fff;
+    background-color: transparent;
     cursor: pointer;
-    transition: opacity 0.3s;
   }
 
-  .es101-progress-circle.filled {
-    opacity: 1;
+  .es101-progress .dot.filled {
+    background-color: #fff;
   }
 
-  .es101-progress-text {
-    font-size: 12px;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 2px 6px;
-    border-radius: 6px;
+  .steps-text {
+    font-size: 0.9rem;
     margin-bottom: 8px;
   }
 
-  .es101-card p {
-    font-size: 14px;
-    text-align: center;
-    margin-top: 6px;
+  .es101-objectives {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
   }
+
+  .es101-objectives h2 {
+    color: #003366;
+    margin-top: 0;
+  }
+
+  /* Module colors */
+  .m1 { background-color: #196719; }
+  .m2 { background-color: #21633e; }
+  .m3 { background-color: #0b605f; }
+  .m4 { background-color: #2f5879; }
+  .m5 { background-color: #00458a; }
+
 </style>
+</head>
+<body>
 
-<div class="es101-container">
+<h1>Earth Science 101 Modules</h1>
 
-  <!-- Module 1 -->
-  <div class="es101-card">
-    <a href="#" style="background-color:#196719;" aria-label="Module 1: Earth Systems">
-      <div class="es101-progress" data-module="m1">
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
+<div class="es101-modules">
+  <div class="es101-card m1">
+    <a href="#">
+      <div class="es101-progress" data-module="1">
+        <div class="dot" data-step="1"></div>
+        <div class="dot" data-step="2"></div>
+        <div class="dot" data-step="3"></div>
+        <div class="dot" data-step="4"></div>
       </div>
-      <div class="es101-progress-text" aria-live="polite"></div>   
-      <div>Module 1<br>Earth Systems</div>
+      <div class="steps-text" id="steps-1">0 / 4 steps completed</div>
+      <h2>Module 1: Earth Systems</h2>
     </a>
-    <p><strong>Objectives:</strong> Understand Earth's layers, the rock cycle, and energy systems.</p>
   </div>
 
-  <!-- Module 2 -->
-  <div class="es101-card">
-    <a href="#" style="background-color:#14608a;" aria-label="Module 2: Weather and Climate">
-      <div class="es101-progress" data-module="m2">
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
+  <div class="es101-card m2">
+    <a href="#">
+      <div class="es101-progress" data-module="2">
+        <div class="dot" data-step="1"></div>
+        <div class="dot" data-step="2"></div>
+        <div class="dot" data-step="3"></div>
+        <div class="dot" data-step="4"></div>
       </div>
-      <div class="es101-progress-text" aria-live="polite"></div>
-      <div>Module 2<br>Weather and Climate</div>
+      <div class="steps-text" id="steps-2">0 / 4 steps completed</div>
+      <h2>Module 2: Plate Tectonics</h2>
     </a>
-    <p><strong>Objectives:</strong> Explain atmospheric processes, weather patterns, and climate systems.</p>
   </div>
 
-  <!-- Module 3 -->
-  <div class="es101-card">
-    <a href="#" style="background-color:#7a1b1b;" aria-label="Module 3: Water Systems">
-      <div class="es101-progress" data-module="m3">
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
+  <div class="es101-card m3">
+    <a href="#">
+      <div class="es101-progress" data-module="3">
+        <div class="dot" data-step="1"></div>
+        <div class="dot" data-step="2"></div>
+        <div class="dot" data-step="3"></div>
+        <div class="dot" data-step="4"></div>
       </div>
-      <div class="es101-progress-text" aria-live="polite"></div>
-      <div>Module 3<br>Water Systems</div>
+      <div class="steps-text" id="steps-3">0 / 4 steps completed</div>
+      <h2>Module 3: Rocks &amp; Minerals</h2>
     </a>
-    <p><strong>Objectives:</strong> Identify components of the hydrologic cycle and human impacts on water resources.</p>
   </div>
 
-  <!-- Module 4 -->
-  <div class="es101-card">
-    <a href="#" style="background-color:#5e2d91;" aria-label="Module 4: Earth's History">
-      <div class="es101-progress" data-module="m4">
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
+  <div class="es101-card m4">
+    <a href="#">
+      <div class="es101-progress" data-module="4">
+        <div class="dot" data-step="1"></div>
+        <div class="dot" data-step="2"></div>
+        <div class="dot" data-step="3"></div>
+        <div class="dot" data-step="4"></div>
       </div>
-      <div class="es101-progress-text" aria-live="polite"></div>
-      <div>Module 4<br>Earth's History</div>
+      <div class="steps-text" id="steps-4">0 / 4 steps completed</div>
+      <h2>Module 4: Atmosphere</h2>
     </a>
-    <p><strong>Objectives:</strong> Interpret evidence from rock strata and fossils to explain Earth's geologic past.</p>
   </div>
 
-  <!-- Module 5 -->
-  <div class="es101-card">
-    <a href="#" style="background-color:#aa6c00;" aria-label="Module 5: Human-Environment Interaction">
-      <div class="es101-progress" data-module="m5">
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
-        <span class="es101-progress-circle"></span>
+  <div class="es101-card m5">
+    <a href="#">
+      <div class="es101-progress" data-module="5">
+        <div class="dot" data-step="1"></div>
+        <div class="dot" data-step="2"></div>
+        <div class="dot" data-step="3"></div>
+        <div class="dot" data-step="4"></div>
       </div>
-      <div class="es101-progress-text" aria-live="polite"></div>
-      <div>Module 5<br>Human-Environment Interaction</div>
+      <div class="steps-text" id="steps-5">0 / 4 steps completed</div>
+      <h2>Module 5: Oceans &amp; Climate</h2>
     </a>
-    <p><strong>Objectives:</strong> Analyze how human activities affect Earth's systems and explore sustainability solutions.</p>
   </div>
+</div>
 
+<div class="es101-objectives">
+  <h2>Learning Objectives</h2>
+  <ul>
+    <li>Understand the structure and interactions of Earth’s systems.</li>
+    <li>Analyze plate tectonics and its impact on geological formations.</li>
+    <li>Identify and classify major rock and mineral types.</li>
+    <li>Describe atmospheric processes and their role in climate systems.</li>
+    <li>Explore oceanic dynamics and climate interactions.</li>
+  </ul>
 </div>
 
 <script>
   document.querySelectorAll('.es101-progress').forEach(progress => {
-    const moduleKey = progress.dataset.module;
-    const circles = progress.querySelectorAll('.es101-progress-circle');
-    const text = progress.parentElement.querySelector('.es101-progress-text');
+    const moduleId = progress.getAttribute('data-module');
+    const savedProgress = JSON.parse(localStorage.getItem('module' + moduleId)) || [];
 
-    // Load saved progress
-    const saved = JSON.parse(localStorage.getItem(moduleKey) || '[]');
-    saved.forEach(i => circles[i].classList.add('filled'));
-    updateText();
-
-    circles.forEach((circle, index) => {
-      circle.addEventListener('click', () => {
-        circle.classList.toggle('filled');
-        saveProgress();
-        updateText();
+    const dots = progress.querySelectorAll('.dot');
+    dots.forEach((dot, i) => {
+      if (savedProgress.includes(i)) dot.classList.add('filled');
+      dot.addEventListener('click', () => {
+        dot.classList.toggle('filled');
+        const filled = [...dots].map((d, idx) => d.classList.contains('filled') ? idx : null).filter(v => v !== null);
+        localStorage.setItem('module' + moduleId, JSON.stringify(filled));
+        updateSteps(moduleId, filled.length);
       });
     });
 
-    function saveProgress() {
-      const filledIndices = [];
-      circles.forEach((c, i) => { if (c.classList.contains('filled')) filledIndices.push(i); });
-      localStorage.setItem(moduleKey, JSON.stringify(filledIndices));
-    }
-
-    function updateText() {
-      const filledCount = progress.querySelectorAll('.filled').length;
-      text.textContent = `${filledCount} / ${circles.length} steps completed`;
-    }
+    updateSteps(moduleId, savedProgress.length);
   });
+
+  function updateSteps(moduleId, count) {
+    const stepsText = document.getElementById('steps-' + moduleId);
+    stepsText.textContent = `${count} / 4 steps completed`;
+  }
 </script>
+
+</body>
+</html>
