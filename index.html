@@ -1,201 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Course Modules</title>
-<style>
-body {
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #ffffff;
-  margin: 40px auto;
-  max-width: 1000px;
-  padding: 0 20px;
-  color: #1e1e1e;
-  line-height: 1.6;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Modules</title>
+  <style>
+    body {
+      font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: #ffffff;
+      margin: 40px auto;
+      max-width: 1000px;
+      padding: 0 20px;
+      color: #1e1e1e;
+      line-height: 1.6;
+    }
 
-h2 {
-  text-align: center;
-  color: #1e1e1e;
-  font-size: 1.8rem;
-  margin-bottom: 30px;
-  font-weight: 700;
-}
+    h2 {
+      text-align: center;
+      color: #1e1e1e;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
 
-.es101-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 20px;
-  justify-items: center;
-}
+    .es101-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
 
-.es101-card a {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  color: #ffffff;
-  font-weight: 700;
-  text-decoration: none;
-  border-radius: 12px;
-  text-align: center;
-  width: 160px;
-  height: 160px;
-  font-size: 1rem;
-  padding: 15px 10px;
-  transition: transform 0.2s ease;
-}
+    .es101-card a {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 12px;
+      text-align: center;
+      width: 160px;
+      height: 160px;
+      font-size: 1rem;
+      padding: 15px 10px;
+      transition: transform 0.2s ease;
+    }
 
-.es101-card a:hover {
-  transform: scale(1.03);
-}
+    .es101-card a:hover {
+      transform: scale(1.03);
+    }
 
-.es101-button-inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-}
+    .es101-button-inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      width: 100%;
+      align-items: center;
+    }
 
-/* Move the module title slightly up for equal spacing */
-.es101-button-inner span:last-child {
-  margin-top: 10px; /* Adjust for equal spacing above and below */
-  text-align: center;
-}
+    .es101-progress-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-.es101-progress-group {
-  display: flex;
-  flex-direction: column;
-}
-</style>
+    .es101-progress {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 4px;
+    }
+
+    .es101-progress-circle {
+      width: 14px;
+      height: 14px;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      margin: 0 3px;
+      background-color: transparent;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      outline: none;
+    }
+
+    .es101-progress-circle.filled {
+      background-color: #ffffff;
+    }
+
+    .es101-progress-circle:focus {
+      outline: 2px dashed #fff;
+      outline-offset: 2px;
+    }
+
+    .es101-progress-text {
+      font-size: 13px;
+      display: block;
+      color: #ffffff;
+    }
+
+    .es101-objectives {
+      font-size: 14px;
+      text-align: center;
+      margin-top: 8px;
+      color: #333;
+      line-height: 1.5;
+      max-width: 160px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .m1 a { background-color: #196719; }
+    .m2 a { background-color: #21633e; }
+    .m3 a { background-color: #0b605f; }
+    .m4 a { background-color: #2f5879; }
+    .m5 a { background-color: #00458a; }
+
+    @media (max-width: 500px) {
+      .es101-container {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 15px;
+      }
+      .es101-card a {
+        width: 140px;
+        height: 140px;
+        font-size: 0.95rem;
+        padding: 12px 8px;
+      }
+      .es101-objectives {
+        max-width: 140px;
+        font-size: 13px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <h2>Course Modules</h2>
 
-<!-- Commented out the "Modules" title -->
-<!-- <h2>Modules</h2> -->
-
-<div class="es101-container">
-  <div class="es101-card">
-    <a href="#" style="background-color: #196719;" aria-label="Module 1: Earth Systems">
-      <div class="es101-button-inner">
-        <div class="es101-progress-group">
-          <div class="circle" tabindex="0"></div>
-          <div class="circle" tabindex="0"></div>
-          <div class="circle" tabindex="0"></div>
-          <div class="circle" tabindex="0"></div>
-          <p class="progress-text">0 / 4 steps completed</p>
+  <div class="es101-container">
+    <div class="es101-card m1">
+      <a href="#" aria-label="Module 1: Earth Systems">
+        <div class="es101-button-inner">
+          <div class="es101-progress-group">
+            <div class="es101-progress" data-module="m1">
+              <span class="es101-progress-circle" tabindex="0"></span>
+              <span class="es101-progress-circle" tabindex="0"></span>
+              <span class="es101-progress-circle" tabindex="0"></span>
+              <span class="es101-progress-circle" tabindex="0"></span>
+            </div>
+            <span class="es101-progress-text" aria-live="polite"></span>
+          </div>
+          <span>Module 1<br>Earth Systems</span>
         </div>
-        <span>Module 1<br>Earth Systems</span>
-      </div>
-    </a>
-    <p><strong>Objectives:</strong> Understand Earth's layers, rock cycle, and energy systems.</p>
+      </a>
+      <p class="es101-objectives"><strong>Objectives:</strong> Understand Earth's layers, the rock cycle, and energy systems that drive geological processes.</p>
+    </div>
+
+    <div class="es101-card m2">
+      <a href="#" aria-label="Module 2: Plate Tectonics">
+        <div class="es101-button-inner">
+          <div class="es101-progress-group">
+            <div class="es101-progress" data-module="m2">
+              <span class="es101-progress-circle" tabindex="0"></span>
+              <span class="es101-progress-circle" tabindex="0"></span>
+              <span class="es101-progress-circle" tabindex="0"></span>
+              <span class="es101-progress-circle" tabindex="0"></span>
+            </div>
+            <span class="es101-progress-text" aria-live="polite"></span>
+          </div>
+          <span>Module 2<br>Plate Tectonics</span>
+        </div>
+      </a>
+      <p class="es101-objectives"><strong>Objectives:</strong> Explain plate boundaries, mantle convection, and how tectonic movement shapes Earth’s surface.</p>
+    </div>
+
+    <div class="es101-card m3">
+      <a href="#" aria-label="Module 3: Rocks and Minerals">
+        <div class="es101-button-inner">
+          <div class="es101-progress-group">
+            <div class="es101-progress" data-module="m3">
+              <span class="es101-progress-circle" tabindex="0"></span>
+              <span class="es101-progress-circle" tabindex="0"></span>
+              <span class="es101-progress-circle" tabindex="0"></span>
+              <span class="es101-progress-circle" tabindex="0"></span>
+            </div>
+            <span class="es101-progress-text" aria-live="polite"></span>
+          </div>
+          <span>Module 3<br>Rocks &amp; Minerals</span>
+        </div>
+      </a>
+      <p class="es101-objectives"><strong>Objectives:</strong> Identify common rock types, classify minerals, and connect rock formation to geological cycles.</p>
+    </div>
+
+    <div class="es101-card m4">
+      <a href="#" aria-label="Module 4: Atmosphere">
+        <div class="es101-button-inner">
+          <div class="es101-progress-group">
+            <div class="es101-progress" data-module="m4">
+              <span class="es101-progress-circle" tabindex="0"></span>
+              <span class="es101-progress-circle" tabindex="0"></span>
+              <span class="es101-progress-circle" tabindex="0"></span>
+              <span class="es101-progress-circle" tabindex="0"></span>
+            </div>
+            <span class="es101-progress-text" aria-live="polite"></span>
+          </div>
+          <span>Module 4<br>Atmosphere</span>
+        </div>
+      </a>
+      <p class="es101-objectives"><strong>Objectives:</strong> Describe atmospheric layers, weather systems, and interactions with Earth's surface and oceans.</p>
+    </div>
+
+    <div class="es101-card m5">
+      <a href="#" aria-label="Module 5: Oceans and Climate">
+        <div class="es101-button-inner">
+          <div class="es101-progress-group">
+            <div class="es101-progress" data-module="m5">
+              <span class="es101-progress-circle" tabindex="0"></span>
+              <span class="es101-progress-circle" tabindex="0"></span>
+              <span class="es101-progress-circle" tabindex="0"></span>
+              <span class="es101-progress-circle" tabindex="0"></span>
+            </div>
+            <span class="es101-progress-text" aria-live="polite"></span>
+          </div>
+          <span>Module 5<br>Oceans &amp; Climate</span>
+        </div>
+      </a>
+      <p class="es101-objectives"><strong>Objectives:</strong> Examine ocean currents, global heat transport, and how oceans influence climate stability.</p>
+    </div>
   </div>
 
-  <div class="es101-card">
-    <a href="#" style="background-color: #21633e;" aria-label="Module 2: Plate Tectonics">
-      <div class="es101-button-inner">
-        <div class="es101-progress-group">
-          <div class="circle" tabindex="0"></div>
-          <div class="circle" tabindex="0"></div>
-          <div class="circle" tabindex="0"></div>
-          <div class="circle" tabindex="0"></div>
-          <p class="progress-text">0 / 4 steps completed</p>
-        </div>
-        <span>Module 2<br>Plate Tectonics</span>
-      </div>
-    </a>
-    <p><strong>Objectives:</strong> Explore tectonic plate boundaries, earthquakes, and volcanoes.</p>
-  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const modules = document.querySelectorAll(".es101-progress");
 
-  <div class="es101-card">
-    <a href="#" style="background-color: #0b605f;" aria-label="Module 3: Rocks & Minerals">
-      <div class="es101-button-inner">
-        <div class="es101-progress-group">
-          <div class="circle" tabindex="0"></div>
-          <div class="circle" tabindex="0"></div>
-          <div class="circle" tabindex="0"></div>
-          <div class="circle" tabindex="0"></div>
-          <p class="progress-text">0 / 4 steps completed</p>
-        </div>
-        <span>Module 3<br>Rocks & Minerals</span>
-      </div>
-    </a>
-    <p><strong>Objectives:</strong> Identify common rocks and minerals and their formation processes.</p>
-  </div>
+      modules.forEach(mod => {
+        const moduleId = mod.dataset.module;
+        const circles = mod.querySelectorAll(".es101-progress-circle");
+        const progressText = mod.nextElementSibling;
 
-  <div class="es101-card">
-    <a href="#" style="background-color: #2f5879;" aria-label="Module 4: Atmosphere">
-      <div class="es101-button-inner">
-        <div class="es101-progress-group">
-          <div class="circle" tabindex="0"></div>
-          <div class="circle" tabindex="0"></div>
-          <div class="circle" tabindex="0"></div>
-          <div class="circle" tabindex="0"></div>
-          <p class="progress-text">0 / 4 steps completed</p>
-        </div>
-        <span>Module 4<br>Atmosphere</span>
-      </div>
-    </a>
-    <p><strong>Objectives:</strong> Examine atmospheric layers, weather systems, and climate processes.</p>
-  </div>
+        // Restore saved progress from localStorage
+        const saved = JSON.parse(localStorage.getItem(`progress_${moduleId}`)) || [];
+        saved.forEach(i => circles[i].classList.add("filled"));
+        updateProgressText();
 
-  <div class="es101-card">
-    <a href="#" style="background-color: #00458a;" aria-label="Module 5: Oceans & Climate">
-      <div class="es101-button-inner">
-        <div class="es101-progress-group">
-          <div class="circle" tabindex="0"></div>
-          <div class="circle" tabindex="0"></div>
-          <div class="circle" tabindex="0"></div>
-          <div class="circle" tabindex="0"></div>
-          <p class="progress-text">0 / 4 steps completed</p>
-        </div>
-        <span>Module 5<br>Oceans & Climate</span>
-      </div>
-    </a>
-    <p><strong>Objectives:</strong> Understand ocean circulation, climate interactions, and human impacts.</p>
-  </div>
-</div>
+        circles.forEach((circle, index) => {
+          const toggle = () => {
+            circle.classList.toggle("filled");
+            saveProgress();
+            updateProgressText();
+          };
 
-<script>
-// Progress circle functionality
-document.querySelectorAll('.es101-card').forEach((mod, moduleId) => {
-  const circles = mod.querySelectorAll('.circle');
-  const progressText = mod.querySelector('.progress-text');
+          circle.addEventListener("click", toggle);
 
-  circles.forEach((circle, i) => {
-    const toggle = () => {
-      circle.classList.toggle('filled');
-      updateProgressText();
-      saveProgress();
-    };
+          // Keyboard accessibility: toggle with Enter or Space
+          circle.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              toggle();
+            }
+          });
+        });
 
-    circle.addEventListener('click', toggle);
+        function saveProgress() {
+          const filled = [];
+          circles.forEach((c, i) => {
+            if (c.classList.contains("filled")) filled.push(i);
+          });
+          localStorage.setItem(`progress_${moduleId}`, JSON.stringify(filled));
+        }
 
-    // Keyboard accessibility: toggle with Enter or Space
-    circle.addEventListener('keydown', (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        toggle();
-      }
+        function updateProgressText() {
+          const count = mod.querySelectorAll(".filled").length;
+          progressText.textContent = `${count} / ${circles.length} steps completed`;
+        }
+      });
     });
-  });
-
-  function saveProgress() {
-    const filled = [];
-    circles.forEach((c, i) => {
-      if (c.classList.contains('filled')) filled.push(i);
-    });
-    localStorage.setItem(`progress_${moduleId}`, JSON.stringify(filled));
-  }
-
-  function updateProgressText() {
-    const count = mod.querySelectorAll('.filled').length;
-    progressText.textContent = `${count} / ${circles.length} steps completed`;
-  }
-});
-</script>
+  </script>
 </body>
 </html>
