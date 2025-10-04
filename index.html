@@ -1,14 +1,3 @@
-Absolutely! Here’s a full, ready-to-use **GitHub v5.0 module page** that includes all the features we finalized:
-
-* Modules fully centered and responsive.
-* Square, smaller buttons.
-* Progress group (circles + progress text) above the module title.
-* Module title centered on the button.
-* Progress circles with black outline and text.
-* Fully keyboard accessible.
-* Local storage progress persistence.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -240,4 +229,47 @@ document.addEventListener("DOMContentLoaded", () => {
   const modules = document.querySelectorAll(".es101-progress");
 
   modules.forEach(mod => {
-```
+    const moduleId = mod.dataset.module;
+    const circles = mod.querySelectorAll(".es101-progress-circle");
+    const progressText = mod.nextElementSibling;
+
+    // Restore saved progress from localStorage
+    const saved = JSON.parse(localStorage.getItem(`progress_${moduleId}`)) || [];
+    saved.forEach(i => circles[i].classList.add("filled"));
+    updateProgressText();
+
+    circles.forEach((circle, index) => {
+      const toggle = () => {
+        circle.classList.toggle("filled");
+        saveProgress();
+        updateProgressText();
+      };
+
+      circle.addEventListener("click", toggle);
+
+      // Keyboard accessibility: toggle with Enter or Space
+      circle.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          toggle();
+        }
+      });
+    });
+
+    function saveProgress() {
+      const filled = [];
+      circles.forEach((c, i) => {
+        if (c.classList.contains("filled")) filled.push(i);
+      });
+      localStorage.setItem(`progress_${moduleId}`, JSON.stringify(filled));
+    }
+
+    function updateProgressText() {
+      const count = mod.querySelectorAll(".filled").length;
+      progressText.textContent = `${count} / ${circles.length} steps completed`;
+    }
+  });
+});
+</script>
+</body>
+</html>
