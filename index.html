@@ -33,7 +33,7 @@
     .es101-card a {
       display: flex;
       flex-direction: column;
-      justify-content: space-between; /* Progress at top, title at bottom */
+      justify-content: space-between; /* Title at bottom */
       align-items: center;
       color: #ffffff;
       font-weight: 700;
@@ -43,7 +43,7 @@
       width: 160px;   /* Square size */
       height: 160px;  /* Square size */
       font-size: 1rem;
-      padding: 15px 10px; /* Top and side padding only */
+      padding: 15px 10px; /* Only top/side padding, flex handles spacing */
       transition: transform 0.2s ease;
     }
 
@@ -51,10 +51,17 @@
       transform: scale(1.03);
     }
 
+    /* Group progress circles + steps completed together */
+    .es101-progress-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     .es101-progress {
       display: flex;
       justify-content: center;
-      margin-bottom: 6px;
+      margin-bottom: 4px; /* Space between circles and text */
     }
 
     .es101-progress-circle {
@@ -74,7 +81,6 @@
 
     .es101-progress-text {
       font-size: 13px;
-      margin-bottom: 6px;
       display: block;
       color: #ffffff;
     }
@@ -122,13 +128,15 @@
   <div class="es101-container">
     <div class="es101-card m1">
       <a href="#" aria-label="Module 1: Earth Systems">
-        <div class="es101-progress" data-module="m1">
-          <span class="es101-progress-circle"></span>
-          <span class="es101-progress-circle"></span>
-          <span class="es101-progress-circle"></span>
-          <span class="es101-progress-circle"></span>
+        <div class="es101-progress-group">
+          <div class="es101-progress" data-module="m1">
+            <span class="es101-progress-circle"></span>
+            <span class="es101-progress-circle"></span>
+            <span class="es101-progress-circle"></span>
+            <span class="es101-progress-circle"></span>
+          </div>
+          <span class="es101-progress-text" aria-live="polite"></span>
         </div>
-        <span class="es101-progress-text" aria-live="polite"></span>
         Module 1<br>Earth Systems
       </a>
       <p class="es101-objectives"><strong>Objectives:</strong> Understand Earth's layers, the rock cycle, and energy systems that drive geological processes.</p>
@@ -136,13 +144,15 @@
 
     <div class="es101-card m2">
       <a href="#" aria-label="Module 2: Plate Tectonics">
-        <div class="es101-progress" data-module="m2">
-          <span class="es101-progress-circle"></span>
-          <span class="es101-progress-circle"></span>
-          <span class="es101-progress-circle"></span>
-          <span class="es101-progress-circle"></span>
+        <div class="es101-progress-group">
+          <div class="es101-progress" data-module="m2">
+            <span class="es101-progress-circle"></span>
+            <span class="es101-progress-circle"></span>
+            <span class="es101-progress-circle"></span>
+            <span class="es101-progress-circle"></span>
+          </div>
+          <span class="es101-progress-text" aria-live="polite"></span>
         </div>
-        <span class="es101-progress-text" aria-live="polite"></span>
         Module 2<br>Plate Tectonics
       </a>
       <p class="es101-objectives"><strong>Objectives:</strong> Explain plate boundaries, mantle convection, and how tectonic movement shapes Earth’s surface.</p>
@@ -150,13 +160,15 @@
 
     <div class="es101-card m3">
       <a href="#" aria-label="Module 3: Rocks and Minerals">
-        <div class="es101-progress" data-module="m3">
-          <span class="es101-progress-circle"></span>
-          <span class="es101-progress-circle"></span>
-          <span class="es101-progress-circle"></span>
-          <span class="es101-progress-circle"></span>
+        <div class="es101-progress-group">
+          <div class="es101-progress" data-module="m3">
+            <span class="es101-progress-circle"></span>
+            <span class="es101-progress-circle"></span>
+            <span class="es101-progress-circle"></span>
+            <span class="es101-progress-circle"></span>
+          </div>
+          <span class="es101-progress-text" aria-live="polite"></span>
         </div>
-        <span class="es101-progress-text" aria-live="polite"></span>
         Module 3<br>Rocks &amp; Minerals
       </a>
       <p class="es101-objectives"><strong>Objectives:</strong> Identify common rock types, classify minerals, and connect rock formation to geological cycles.</p>
@@ -164,13 +176,15 @@
 
     <div class="es101-card m4">
       <a href="#" aria-label="Module 4: Atmosphere">
-        <div class="es101-progress" data-module="m4">
-          <span class="es101-progress-circle"></span>
-          <span class="es101-progress-circle"></span>
-          <span class="es101-progress-circle"></span>
-          <span class="es101-progress-circle"></span>
+        <div class="es101-progress-group">
+          <div class="es101-progress" data-module="m4">
+            <span class="es101-progress-circle"></span>
+            <span class="es101-progress-circle"></span>
+            <span class="es101-progress-circle"></span>
+            <span class="es101-progress-circle"></span>
+          </div>
+          <span class="es101-progress-text" aria-live="polite"></span>
         </div>
-        <span class="es101-progress-text" aria-live="polite"></span>
         Module 4<br>Atmosphere
       </a>
       <p class="es101-objectives"><strong>Objectives:</strong> Describe atmospheric layers, weather systems, and interactions with Earth's surface and oceans.</p>
@@ -178,13 +192,15 @@
 
     <div class="es101-card m5">
       <a href="#" aria-label="Module 5: Oceans and Climate">
-        <div class="es101-progress" data-module="m5">
-          <span class="es101-progress-circle"></span>
-          <span class="es101-progress-circle"></span>
-          <span class="es101-progress-circle"></span>
-          <span class="es101-progress-circle"></span>
+        <div class="es101-progress-group">
+          <div class="es101-progress" data-module="m5">
+            <span class="es101-progress-circle"></span>
+            <span class="es101-progress-circle"></span>
+            <span class="es101-progress-circle"></span>
+            <span class="es101-progress-circle"></span>
+          </div>
+          <span class="es101-progress-text" aria-live="polite"></span>
         </div>
-        <span class="es101-progress-text" aria-live="polite"></span>
         Module 5<br>Oceans &amp; Climate
       </a>
       <p class="es101-objectives"><strong>Objectives:</strong> Examine ocean currents, global heat transport, and how oceans influence climate stability.</p>
