@@ -60,6 +60,12 @@
       align-items: center;
     }
 
+    /* Move the module title slightly up for equal spacing */
+    .es101-button-inner span:last-child {
+      margin-top: 10px; /* Adjust for equal spacing above and below */
+      text-align: center;
+    }
+
     .es101-progress-group {
       display: flex;
       flex-direction: column;
@@ -252,7 +258,6 @@
 
           circle.addEventListener("click", toggle);
 
-          // Keyboard accessibility: toggle with Enter or Space
           circle.addEventListener("keydown", (e) => {
             if (e.key === "Enter" || e.key === " ") {
               e.preventDefault();
