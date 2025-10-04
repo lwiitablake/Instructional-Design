@@ -368,15 +368,53 @@
 
 
   <script>
-  window.addEventListener("load", () => {
-    const resizeObserver = new ResizeObserver(() => {
-      document.body.style.overflow = "hidden"; // hides internal scrollbar
-      const height = document.body.scrollHeight;
-      parent.postMessage({ frameHeight: height }, "*");
-    });
-    resizeObserver.observe(document.body);
-  });
+(function () {
+  // Throttle updates so we don't spam postMessage
+  let scheduled = false;
+  const sendHeight = () => {
+    scheduled = false;
+    try {
+      const doc = document.documentElement;
+      const body = document.body;
+
+      // Best-effort accurate height
+      const height = Math.max(
+        body.scrollHeight, body.offsetHeight,
+        doc.clientHeight, doc.scrollHeight, doc.offsetHeight
+      );
+
+      // small buffer so rounding/scrollbars don't introduce 1px clipping
+      const buffer = 8;
+
+      // Send a typed message (parent should verify origin)
+      parent.postMessage({ type: 'es101-height', height: height + buffer }, '*');
+    } catch (err) {
+      // cross-origin should not happen here (we are inside iframe)
+      console.warn('es101: failed to post height', err);
+    }
+  };
+
+  const scheduleSend = () => {
+    if (!scheduled) {
+      scheduled = true;
+      // use rAF to coalesce multiple layout changes
+      requestAnimationFrame(sendHeight);
+    }
+  };
+
+  // Observe document element for size changes (images, fonts, DOM changes)
+  const ro = new ResizeObserver(scheduleSend);
+  ro.observe(document.documentElement);
+
+  // also trigger on load and a few timed fallback calls (images/fonts might load after)
+  window.addEventListener('load', scheduleSend);
+  window.addEventListener('DOMContentLoaded', scheduleSend);
+  setTimeout(scheduleSend, 500);
+  setTimeout(scheduleSend, 1500);
+  setTimeout(scheduleSend, 3000);
+})();
 </script>
+
 
 
 </body>
