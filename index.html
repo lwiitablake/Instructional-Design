@@ -17,26 +17,25 @@
 
   .es101-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 20px; /* consistent spacing */
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
     justify-items: center;
-    align-items: start;
   }
 
   .es101-card a {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     color: #ffffff;
     font-weight: 700;
     text-decoration: none;
     border-radius: 12px;
     text-align: center;
-    width: 160px;
-    height: 160px; /* keep square */
-    font-size: 1rem;
-    padding: 10px;
+    width: 140px;
+    height: 140px;
+    font-size: 0.95rem;
+    padding: 12px 8px;
     transition: transform 0.2s ease;
   }
 
@@ -48,16 +47,16 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    height: 100%;
     width: 100%;
+    align-items: center;
   }
 
-  /* Progress group above button text */
   .es101-progress-group {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
   }
 
   .es101-progress {
@@ -89,6 +88,7 @@
 
   .es101-progress-text {
     font-size: 13px;
+    display: block;
     color: #000;
   }
 
@@ -98,7 +98,7 @@
     margin-top: 8px;
     color: #333;
     line-height: 1.5;
-    max-width: 160px;
+    max-width: 140px;
   }
 
   .m1 a { background-color: #196719; }
@@ -109,18 +109,18 @@
 
   @media (max-width: 500px) {
     .es101-container {
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
     }
     .es101-card a {
-      width: 140px;
-      height: 140px;
-      font-size: 0.95rem;
-      padding: 8px;
+      width: 120px;
+      height: 120px;
+      font-size: 0.9rem;
+      padding: 10px 6px;
     }
     .es101-objectives {
-      max-width: 140px;
-      font-size: 13px;
+      max-width: 120px;
+      font-size: 12px;
     }
   }
 </style>
@@ -130,7 +130,7 @@
 <div class="es101-container">
   <!-- Module 1 -->
   <div class="es101-card m1">
-    <a href="<!-- LINK TO MODULE 1 PAGE -->" aria-label="Module 1: Earth Systems">
+    <a href="#" aria-label="Module 1: Earth Systems">
       <div class="es101-button-inner">
         <div class="es101-progress-group">
           <div class="es101-progress" data-module="m1">
@@ -149,7 +149,7 @@
 
   <!-- Module 2 -->
   <div class="es101-card m2">
-    <a href="<!-- LINK TO MODULE 2 PAGE -->" aria-label="Module 2: Plate Tectonics">
+    <a href="#" aria-label="Module 2: Plate Tectonics">
       <div class="es101-button-inner">
         <div class="es101-progress-group">
           <div class="es101-progress" data-module="m2">
@@ -168,7 +168,7 @@
 
   <!-- Module 3 -->
   <div class="es101-card m3">
-    <a href="<!-- LINK TO MODULE 3 PAGE -->" aria-label="Module 3: Rocks and Minerals">
+    <a href="#" aria-label="Module 3: Rocks and Minerals">
       <div class="es101-button-inner">
         <div class="es101-progress-group">
           <div class="es101-progress" data-module="m3">
@@ -187,7 +187,7 @@
 
   <!-- Module 4 -->
   <div class="es101-card m4">
-    <a href="<!-- LINK TO MODULE 4 PAGE -->" aria-label="Module 4: Atmosphere">
+    <a href="#" aria-label="Module 4: Atmosphere">
       <div class="es101-button-inner">
         <div class="es101-progress-group">
           <div class="es101-progress" data-module="m4">
@@ -206,7 +206,7 @@
 
   <!-- Module 5 -->
   <div class="es101-card m5">
-    <a href="<!-- LINK TO MODULE 5 PAGE -->" aria-label="Module 5: Oceans and Climate">
+    <a href="#" aria-label="Module 5: Oceans and Climate">
       <div class="es101-button-inner">
         <div class="es101-progress-group">
           <div class="es101-progress" data-module="m5">
@@ -233,17 +233,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const circles = mod.querySelectorAll(".es101-progress-circle");
     const progressText = mod.nextElementSibling;
 
+    // Restore saved progress from localStorage
     const saved = JSON.parse(localStorage.getItem(`progress_${moduleId}`)) || [];
     saved.forEach(i => circles[i].classList.add("filled"));
     updateProgressText();
 
-    circles.forEach((circle) => {
+    circles.forEach((circle, index) => {
       const toggle = () => {
         circle.classList.toggle("filled");
         saveProgress();
         updateProgressText();
       };
+
       circle.addEventListener("click", toggle);
+
+      // Keyboard accessibility: toggle with Enter or Space
       circle.addEventListener("keydown", (e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
