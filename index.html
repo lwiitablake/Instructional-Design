@@ -24,27 +24,32 @@
     }
 
     .es101-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* ensures modules are centered */
       gap: 20px;
-      justify-items: center;
-      justify-content: center; /* ensures grid is centered when stacked */
+    }
+
+    .es101-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .es101-card a {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       color: #ffffff;
       font-weight: 700;
       text-decoration: none;
       border-radius: 12px;
       text-align: center;
-      width: 160px;
-      height: 160px;
-      font-size: 1rem;
-      padding: 15px 10px;
+      width: 140px;   /* smaller width */
+      height: 140px;  /* smaller height */
+      font-size: 0.95rem;
+      padding: 12px 8px;
       transition: transform 0.2s ease;
     }
 
@@ -55,16 +60,17 @@
     .es101-button-inner {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-      width: 100%;
       align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
     }
 
     .es101-progress-group {
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-bottom: 8px; /* space between progress and button */
     }
 
     .es101-progress {
@@ -98,6 +104,7 @@
       font-size: 13px;
       display: block;
       color: #ffffff;
+      text-align: center;
     }
 
     .es101-objectives {
@@ -118,15 +125,11 @@
     .m5 a { background-color: #00458a; }
 
     @media (max-width: 500px) {
-      .es101-container {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 15px;
-      }
       .es101-card a {
-        width: 140px;
-        height: 140px;
-        font-size: 0.95rem;
-        padding: 12px 8px;
+        width: 120px;
+        height: 120px;
+        font-size: 0.9rem;
+        padding: 10px 6px;
       }
       .es101-objectives {
         max-width: 140px;
@@ -140,17 +143,17 @@
 
   <div class="es101-container">
     <div class="es101-card m1">
+      <div class="es101-progress-group">
+        <div class="es101-progress" data-module="m1">
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+        </div>
+        <span class="es101-progress-text" aria-live="polite"></span>
+      </div>
       <a href="#" aria-label="Module 1: Earth Systems">
         <div class="es101-button-inner">
-          <div class="es101-progress-group">
-            <div class="es101-progress" data-module="m1">
-              <span class="es101-progress-circle" tabindex="0"></span>
-              <span class="es101-progress-circle" tabindex="0"></span>
-              <span class="es101-progress-circle" tabindex="0"></span>
-              <span class="es101-progress-circle" tabindex="0"></span>
-            </div>
-            <span class="es101-progress-text" aria-live="polite"></span>
-          </div>
           <span>Module 1<br>Earth Systems</span>
         </div>
       </a>
@@ -158,17 +161,17 @@
     </div>
 
     <div class="es101-card m2">
+      <div class="es101-progress-group">
+        <div class="es101-progress" data-module="m2">
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+        </div>
+        <span class="es101-progress-text" aria-live="polite"></span>
+      </div>
       <a href="#" aria-label="Module 2: Plate Tectonics">
         <div class="es101-button-inner">
-          <div class="es101-progress-group">
-            <div class="es101-progress" data-module="m2">
-              <span class="es101-progress-circle" tabindex="0"></span>
-              <span class="es101-progress-circle" tabindex="0"></span>
-              <span class="es101-progress-circle" tabindex="0"></span>
-              <span class="es101-progress-circle" tabindex="0"></span>
-            </div>
-            <span class="es101-progress-text" aria-live="polite"></span>
-          </div>
           <span>Module 2<br>Plate Tectonics</span>
         </div>
       </a>
@@ -176,17 +179,17 @@
     </div>
 
     <div class="es101-card m3">
+      <div class="es101-progress-group">
+        <div class="es101-progress" data-module="m3">
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+        </div>
+        <span class="es101-progress-text" aria-live="polite"></span>
+      </div>
       <a href="#" aria-label="Module 3: Rocks and Minerals">
         <div class="es101-button-inner">
-          <div class="es101-progress-group">
-            <div class="es101-progress" data-module="m3">
-              <span class="es101-progress-circle" tabindex="0"></span>
-              <span class="es101-progress-circle" tabindex="0"></span>
-              <span class="es101-progress-circle" tabindex="0"></span>
-              <span class="es101-progress-circle" tabindex="0"></span>
-            </div>
-            <span class="es101-progress-text" aria-live="polite"></span>
-          </div>
           <span>Module 3<br>Rocks &amp; Minerals</span>
         </div>
       </a>
@@ -194,17 +197,17 @@
     </div>
 
     <div class="es101-card m4">
+      <div class="es101-progress-group">
+        <div class="es101-progress" data-module="m4">
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+        </div>
+        <span class="es101-progress-text" aria-live="polite"></span>
+      </div>
       <a href="#" aria-label="Module 4: Atmosphere">
         <div class="es101-button-inner">
-          <div class="es101-progress-group">
-            <div class="es101-progress" data-module="m4">
-              <span class="es101-progress-circle" tabindex="0"></span>
-              <span class="es101-progress-circle" tabindex="0"></span>
-              <span class="es101-progress-circle" tabindex="0"></span>
-              <span class="es101-progress-circle" tabindex="0"></span>
-            </div>
-            <span class="es101-progress-text" aria-live="polite"></span>
-          </div>
           <span>Module 4<br>Atmosphere</span>
         </div>
       </a>
@@ -212,17 +215,17 @@
     </div>
 
     <div class="es101-card m5">
+      <div class="es101-progress-group">
+        <div class="es101-progress" data-module="m5">
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+        </div>
+        <span class="es101-progress-text" aria-live="polite"></span>
+      </div>
       <a href="#" aria-label="Module 5: Oceans and Climate">
         <div class="es101-button-inner">
-          <div class="es101-progress-group">
-            <div class="es101-progress" data-module="m5">
-              <span class="es101-progress-circle" tabindex="0"></span>
-              <span class="es101-progress-circle" tabindex="0"></span>
-              <span class="es101-progress-circle" tabindex="0"></span>
-              <span class="es101-progress-circle" tabindex="0"></span>
-            </div>
-            <span class="es101-progress-text" aria-live="polite"></span>
-          </div>
           <span>Module 5<br>Oceans &amp; Climate</span>
         </div>
       </a>
