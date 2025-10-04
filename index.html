@@ -17,8 +17,8 @@
 
   .es101-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 20px; /* constant spacing between buttons */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px; /* consistent spacing */
     justify-items: center;
     align-items: start;
   }
@@ -33,10 +33,10 @@
     text-decoration: none;
     border-radius: 12px;
     text-align: center;
-    width: 140px;
-    height: auto;
-    font-size: 0.95rem;
-    padding: 12px 8px;
+    width: 160px;
+    height: 160px; /* keep square */
+    font-size: 1rem;
+    padding: 10px;
     transition: transform 0.2s ease;
   }
 
@@ -52,6 +52,7 @@
     width: 100%;
   }
 
+  /* Progress group above button text */
   .es101-progress-group {
     display: flex;
     flex-direction: column;
@@ -97,7 +98,7 @@
     margin-top: 8px;
     color: #333;
     line-height: 1.5;
-    max-width: 140px;
+    max-width: 160px;
   }
 
   .m1 a { background-color: #196719; }
@@ -108,17 +109,18 @@
 
   @media (max-width: 500px) {
     .es101-container {
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 20px; /* keep spacing consistent */
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
     }
     .es101-card a {
-      width: 120px;
-      font-size: 0.9rem;
-      padding: 10px 6px;
+      width: 140px;
+      height: 140px;
+      font-size: 0.95rem;
+      padding: 8px;
     }
     .es101-objectives {
-      max-width: 120px;
-      font-size: 12px;
+      max-width: 140px;
+      font-size: 13px;
     }
   }
 </style>
@@ -128,7 +130,7 @@
 <div class="es101-container">
   <!-- Module 1 -->
   <div class="es101-card m1">
-    <a href="#" aria-label="Module 1: Earth Systems">
+    <a href="<!-- LINK TO MODULE 1 PAGE -->" aria-label="Module 1: Earth Systems">
       <div class="es101-button-inner">
         <div class="es101-progress-group">
           <div class="es101-progress" data-module="m1">
@@ -147,7 +149,7 @@
 
   <!-- Module 2 -->
   <div class="es101-card m2">
-    <a href="#" aria-label="Module 2: Plate Tectonics">
+    <a href="<!-- LINK TO MODULE 2 PAGE -->" aria-label="Module 2: Plate Tectonics">
       <div class="es101-button-inner">
         <div class="es101-progress-group">
           <div class="es101-progress" data-module="m2">
@@ -166,7 +168,7 @@
 
   <!-- Module 3 -->
   <div class="es101-card m3">
-    <a href="#" aria-label="Module 3: Rocks and Minerals">
+    <a href="<!-- LINK TO MODULE 3 PAGE -->" aria-label="Module 3: Rocks and Minerals">
       <div class="es101-button-inner">
         <div class="es101-progress-group">
           <div class="es101-progress" data-module="m3">
@@ -185,7 +187,7 @@
 
   <!-- Module 4 -->
   <div class="es101-card m4">
-    <a href="#" aria-label="Module 4: Atmosphere">
+    <a href="<!-- LINK TO MODULE 4 PAGE -->" aria-label="Module 4: Atmosphere">
       <div class="es101-button-inner">
         <div class="es101-progress-group">
           <div class="es101-progress" data-module="m4">
@@ -204,7 +206,7 @@
 
   <!-- Module 5 -->
   <div class="es101-card m5">
-    <a href="#" aria-label="Module 5: Oceans and Climate">
+    <a href="<!-- LINK TO MODULE 5 PAGE -->" aria-label="Module 5: Oceans and Climate">
       <div class="es101-button-inner">
         <div class="es101-progress-group">
           <div class="es101-progress" data-module="m5">
