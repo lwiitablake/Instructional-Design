@@ -1,221 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Earth Science Modules</title>
-<style>
-  body {
-    font-family: "Open Sans", Arial, sans-serif;
-    background-color: #f6f6f6;
-    color: #222;
-    margin: 0;
-    padding: 0;
-  }
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 40px;">
 
-  h1 {
-    text-align: center;
-    margin-top: 30px;
-    color: #003366;
-  }
-
-  .es101-modules {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-  }
-
-  .es101-card {
-    border-radius: 16px;
-    overflow: hidden;
-    text-align: center;
-    width: 240px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
-  }
-
-  .es101-card a {
-    display: block;
-    position: relative;
-    color: #fff;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 20px 10px 15px;
-    border-radius: 12px;
-    text-align: center;
-    min-height: 150px;
-  }
-
-  .es101-progress {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 10px;
-  }
-
-  .es101-progress .dot {
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    background-color: transparent;
-    cursor: pointer;
-  }
-
-  .es101-progress .dot.filled {
-    background-color: #fff;
-  }
-
-  .steps-text {
-    font-size: 0.9rem;
-    margin-bottom: 8px;
-  }
-
-  .es101-objectives-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-  }
-
-  .es101-objectives {
-    max-width: 900px;
-    width: 90%;
-    padding: 20px 30px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  }
-
-  .es101-objectives h2 {
-    color: #003366;
-    margin-top: 0;
-    text-align: center;
-  }
-
-  .es101-objectives ul {
-    line-height: 1.6;
-  }
-
-  /* Module colors */
-  .m1 { background-color: #196719; }
-  .m2 { background-color: #21633e; }
-  .m3 { background-color: #0b605f; }
-  .m4 { background-color: #2f5879; }
-  .m5 { background-color: #00458a; }
-
-</style>
-</head>
-<body>
-
-<h1>Earth Science 101 Modules</h1>
-
-<div class="es101-modules">
-  <div class="es101-card m1">
-    <a href="#">
-      <div class="es101-progress" data-module="1">
-        <div class="dot" data-step="1"></div>
-        <div class="dot" data-step="2"></div>
-        <div class="dot" data-step="3"></div>
-        <div class="dot" data-step="4"></div>
+  <!-- MODULE 1 -->
+  <div style="text-align: center; flex: 0 1 160px;">
+    <a style="display: flex; flex-direction: column; width: 160px; height: 160px; color: #ffffff; font-weight: bold; text-decoration: none; border-radius: 12px; align-items: center; justify-content: center; text-align: center; background-color: #196719;" role="button" href="#" aria-label="Module 1: Earth Systems">
+      <div class="progress" style="display: flex; justify-content: center; gap: 6px; margin-bottom: 8px;">
+        <span class="dot" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid #ffffff; background-color: transparent; display: inline-block;"></span>
+        <span class="dot" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid #ffffff; background-color: transparent; display: inline-block;"></span>
+        <span class="dot" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid #ffffff; background-color: transparent; display: inline-block;"></span>
+        <span class="dot" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid #ffffff; background-color: transparent; display: inline-block;"></span>
       </div>
-      <div class="steps-text" id="steps-1">0 / 4 steps completed</div>
-      <h2>Module 1: Earth Systems</h2>
+      <div style="font-size: 13px; margin-bottom: 6px;">0 / 4 steps completed</div>
+      <div>Module 1<br />Earth Systems</div>
     </a>
+    <p style="font-size: 14px; margin-top: 8px; text-align: center;"><strong>Objectives:</strong> Understand Earth's layers, rock cycle, and energy systems.</p>
   </div>
 
-  <div class="es101-card m2">
-    <a href="#">
-      <div class="es101-progress" data-module="2">
-        <div class="dot" data-step="1"></div>
-        <div class="dot" data-step="2"></div>
-        <div class="dot" data-step="3"></div>
-        <div class="dot" data-step="4"></div>
+  <!-- MODULE 2 -->
+  <div style="text-align: center; flex: 0 1 160px;">
+    <a style="display: flex; flex-direction: column; width: 160px; height: 160px; color: #ffffff; font-weight: bold; text-decoration: none; border-radius: 12px; align-items: center; justify-content: center; text-align: center; background-color: #21633e;" role="button" href="#" aria-label="Module 2: Plate Tectonics">
+      <div class="progress" style="display: flex; justify-content: center; gap: 6px; margin-bottom: 8px;">
+        <span class="dot" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid #ffffff; background-color: transparent; display: inline-block;"></span>
+        <span class="dot" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid #ffffff; background-color: transparent; display: inline-block;"></span>
+        <span class="dot" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid #ffffff; background-color: transparent; display: inline-block;"></span>
+        <span class="dot" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid #ffffff; background-color: transparent; display: inline-block;"></span>
       </div>
-      <div class="steps-text" id="steps-2">0 / 4 steps completed</div>
-      <h2>Module 2: Plate Tectonics</h2>
+      <div style="font-size: 13px; margin-bottom: 6px;">0 / 4 steps completed</div>
+      <div>Module 2<br />Plate Tectonics</div>
     </a>
+    <p style="font-size: 14px; margin-top: 8px; text-align: center;"><strong>Objectives:</strong> Explore tectonic plate boundaries, earthquakes, and volcanoes.</p>
   </div>
 
-  <div class="es101-card m3">
-    <a href="#">
-      <div class="es101-progress" data-module="3">
-        <div class="dot" data-step="1"></div>
-        <div class="dot" data-step="2"></div>
-        <div class="dot" data-step="3"></div>
-        <div class="dot" data-step="4"></div>
+  <!-- MODULE 3 -->
+  <div style="text-align: center; flex: 0 1 160px;">
+    <a style="display: flex; flex-direction: column; width: 160px; height: 160px; color: #ffffff; font-weight: bold; text-decoration: none; border-radius: 12px; align-items: center; justify-content: center; text-align: center; background-color: #0b605f;" role="button" href="#" aria-label="Module 3: Rocks and Minerals">
+      <div class="progress" style="display: flex; justify-content: center; gap: 6px; margin-bottom: 8px;">
+        <span class="dot" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid #ffffff; background-color: transparent; display: inline-block;"></span>
+        <span class="dot" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid #ffffff; background-color: transparent; display: inline-block;"></span>
+        <span class="dot" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid #ffffff; background-color: transparent; display: inline-block;"></span>
+        <span class="dot" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid #ffffff; background-color: transparent; display: inline-block;"></span>
       </div>
-      <div class="steps-text" id="steps-3">0 / 4 steps completed</div>
-      <h2>Module 3: Rocks &amp; Minerals</h2>
+      <div style="font-size: 13px; margin-bottom: 6px;">0 / 4 steps completed</div>
+      <div>Module 3<br />Rocks &amp; Minerals</div>
     </a>
+    <p style="font-size: 14px; margin-top: 8px; text-align: center;"><strong>Objectives:</strong> Identify common rocks and minerals and their formation processes.</p>
   </div>
 
-  <div class="es101-card m4">
-    <a href="#">
-      <div class="es101-progress" data-module="4">
-        <div class="dot" data-step="1"></div>
-        <div class="dot" data-step="2"></div>
-        <div class="dot" data-step="3"></div>
-        <div class="dot" data-step="4"></div>
+  <!-- MODULE 4 -->
+  <div style="text-align: center; flex: 0 1 160px;">
+    <a style="display: flex; flex-direction: column; width: 160px; height: 160px; color: #ffffff; font-weight: bold; text-decoration: none; border-radius: 12px; align-items: center; justify-content: center; text-align: center; background-color: #2f5879;" role="button" href="#" aria-label="Module 4: Atmosphere">
+      <div class="progress" style="display: flex; justify-content: center; gap: 6px; margin-bottom: 8px;">
+        <span class="dot" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid #ffffff; background-color: transparent; display: inline-block;"></span>
+        <span class="dot" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid #ffffff; background-color: transparent; display: inline-block;"></span>
+        <span class="dot" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid #ffffff; background-color: transparent; display: inline-block;"></span>
+        <span class="dot" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid #ffffff; background-color: transparent; display: inline-block;"></span>
       </div>
-      <div class="steps-text" id="steps-4">0 / 4 steps completed</div>
-      <h2>Module 4: Atmosphere</h2>
+      <div style="font-size: 13px; margin-bottom: 6px;">0 / 4 steps completed</div>
+      <div>Module 4<br />Atmosphere</div>
     </a>
+    <p style="font-size: 14px; margin-top: 8px; text-align: center;"><strong>Objectives:</strong> Examine atmospheric layers, weather systems, and climate processes.</p>
   </div>
 
-  <div class="es101-card m5">
-    <a href="#">
-      <div class="es101-progress" data-module="5">
-        <div class="dot" data-step="1"></div>
-        <div class="dot" data-step="2"></div>
-        <div class="dot" data-step="3"></div>
-        <div class="dot" data-step="4"></div>
+  <!-- MODULE 5 -->
+  <div style="text-align: center; flex: 0 1 160px;">
+    <a style="display: flex; flex-direction: column; width: 160px; height: 160px; color: #ffffff; font-weight: bold; text-decoration: none; border-radius: 12px; align-items: center; justify-content: center; text-align: center; background-color: #00458a;" role="button" href="#" aria-label="Module 5: Oceans and Climate">
+      <div class="progress" style="display: flex; justify-content: center; gap: 6px; margin-bottom: 8px;">
+        <span class="dot" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid #ffffff; background-color: transparent; display: inline-block;"></span>
+        <span class="dot" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid #ffffff; background-color: transparent; display: inline-block;"></span>
+        <span class="dot" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid #ffffff; background-color: transparent; display: inline-block;"></span>
+        <span class="dot" style="width: 14px; height: 14px; border-radius: 50%; border: 2px solid #ffffff; background-color: transparent; display: inline-block;"></span>
       </div>
-      <div class="steps-text" id="steps-5">0 / 4 steps completed</div>
-      <h2>Module 5: Oceans &amp; Climate</h2>
+      <div style="font-size: 13px; margin-bottom: 6px;">0 / 4 steps completed</div>
+      <div>Module 5<br />Oceans &amp; Climate</div>
     </a>
+    <p style="font-size: 14px; margin-top: 8px; text-align: center;"><strong>Objectives:</strong> Understand ocean circulation, climate interactions, and human impacts.</p>
   </div>
+
 </div>
-
-<div class="es101-objectives-wrapper">
-  <div class="es101-objectives" role="region" aria-labelledby="objectives-heading">
-    <h2 id="objectives-heading">Learning Objectives</h2>
-    <ul>
-      <li>Understand the structure and interactions of Earth’s systems.</li>
-      <li>Analyze plate tectonics and its impact on geological formations.</li>
-      <li>Identify and classify major rock and mineral types.</li>
-      <li>Describe atmospheric processes and their role in climate systems.</li>
-      <li>Explore oceanic dynamics and climate interactions.</li>
-    </ul>
-  </div>
-</div>
-
-<script>
-  document.querySelectorAll('.es101-progress').forEach(progress => {
-    const moduleId = progress.getAttribute('data-module');
-    const savedProgress = JSON.parse(localStorage.getItem('module' + moduleId)) || [];
-
-    const dots = progress.querySelectorAll('.dot');
-    dots.forEach((dot, i) => {
-      if (savedProgress.includes(i)) dot.classList.add('filled');
-      dot.addEventListener('click', () => {
-        dot.classList.toggle('filled');
-        const filled = [...dots].map((d, idx) => d.classList.contains('filled') ? idx : null).filter(v => v !== null);
-        localStorage.setItem('module' + moduleId, JSON.stringify(filled));
-        updateSteps(moduleId, filled.length);
-      });
-    });
-
-    updateSteps(moduleId, savedProgress.length);
-  });
-
-  function updateSteps(moduleId, count) {
-    const stepsText = document.getElementById('steps-' + moduleId);
-    stepsText.textContent = `${count} / 4 steps completed`;
-  }
-</script>
-
-</body>
-</html>
