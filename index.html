@@ -1,4 +1,4 @@
-<!-- Accessible Module Page with Progress Indicators and Learning Objectives -->
+<!-- Accessible Module Page with Progress Indicators and Learning Objectives (Fixed Overlap) -->
 <style>
   .es101-container {
     display: flex;
@@ -14,21 +14,24 @@
   }
 
   .es101-card a {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     position: relative;
     color: #fff;
     font-weight: bold;
     text-decoration: none;
-    padding: 20px 10px 15px; /* increased top padding */
+    padding: 18px 10px 15px;
     border-radius: 12px;
     text-align: center;
-    min-height: 120px;
+    min-height: 140px;
   }
 
   .es101-progress {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px; /* added space between circles and module title */
+    margin-bottom: 6px;
     gap: 5px;
   }
 
@@ -47,18 +50,12 @@
   }
 
   .es101-progress-text {
-    position: absolute;
-    top: 40px;
-    left: 50%;
-    transform: translateX(-50%);
     font-size: 12px;
     color: #fff;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4);
     padding: 2px 6px;
     border-radius: 6px;
-    z-index: 3;
-    white-space: nowrap;
-    pointer-events: none;
+    margin-bottom: 8px;
   }
 
   .es101-card p {
@@ -80,7 +77,7 @@
         <span class="es101-progress-circle"></span>
       </div>
       <div class="es101-progress-text" aria-live="polite"></div>
-      Module 1<br>Earth Systems
+      <div>Module 1<br>Earth Systems</div>
     </a>
     <p><strong>Objectives:</strong> Understand Earth's layers, the rock cycle, and energy systems.</p>
   </div>
@@ -95,7 +92,7 @@
         <span class="es101-progress-circle"></span>
       </div>
       <div class="es101-progress-text" aria-live="polite"></div>
-      Module 2<br>Weather and Climate
+      <div>Module 2<br>Weather and Climate</div>
     </a>
     <p><strong>Objectives:</strong> Explain atmospheric processes, weather patterns, and climate systems.</p>
   </div>
@@ -110,7 +107,7 @@
         <span class="es101-progress-circle"></span>
       </div>
       <div class="es101-progress-text" aria-live="polite"></div>
-      Module 3<br>Water Systems
+      <div>Module 3<br>Water Systems</div>
     </a>
     <p><strong>Objectives:</strong> Identify components of the hydrologic cycle and human impacts on water resources.</p>
   </div>
@@ -125,7 +122,7 @@
         <span class="es101-progress-circle"></span>
       </div>
       <div class="es101-progress-text" aria-live="polite"></div>
-      Module 4<br>Earth's History
+      <div>Module 4<br>Earth's History</div>
     </a>
     <p><strong>Objectives:</strong> Interpret evidence from rock strata and fossils to explain Earth's geologic past.</p>
   </div>
@@ -140,7 +137,7 @@
         <span class="es101-progress-circle"></span>
       </div>
       <div class="es101-progress-text" aria-live="polite"></div>
-      Module 5<br>Human-Environment Interaction
+      <div>Module 5<br>Human-Environment Interaction</div>
     </a>
     <p><strong>Objectives:</strong> Analyze how human activities affect Earth's systems and explore sustainability solutions.</p>
   </div>
