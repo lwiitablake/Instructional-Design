@@ -33,6 +33,7 @@
     text-align: center;
     width: 240px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
   }
 
   .es101-card a {
@@ -72,10 +73,17 @@
     margin-bottom: 8px;
   }
 
+  .es101-objectives-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
   .es101-objectives {
     max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
+    width: 90%;
+    padding: 20px 30px;
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.1);
@@ -84,6 +92,11 @@
   .es101-objectives h2 {
     color: #003366;
     margin-top: 0;
+    text-align: center;
+  }
+
+  .es101-objectives ul {
+    line-height: 1.6;
   }
 
   /* Module colors */
@@ -166,15 +179,17 @@
   </div>
 </div>
 
-<div class="es101-objectives">
-  <h2>Learning Objectives</h2>
-  <ul>
-    <li>Understand the structure and interactions of Earth’s systems.</li>
-    <li>Analyze plate tectonics and its impact on geological formations.</li>
-    <li>Identify and classify major rock and mineral types.</li>
-    <li>Describe atmospheric processes and their role in climate systems.</li>
-    <li>Explore oceanic dynamics and climate interactions.</li>
-  </ul>
+<div class="es101-objectives-wrapper">
+  <div class="es101-objectives" role="region" aria-labelledby="objectives-heading">
+    <h2 id="objectives-heading">Learning Objectives</h2>
+    <ul>
+      <li>Understand the structure and interactions of Earth’s systems.</li>
+      <li>Analyze plate tectonics and its impact on geological formations.</li>
+      <li>Identify and classify major rock and mineral types.</li>
+      <li>Describe atmospheric processes and their role in climate systems.</li>
+      <li>Explore oceanic dynamics and climate interactions.</li>
+    </ul>
+  </div>
 </div>
 
 <script>
