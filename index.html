@@ -33,7 +33,7 @@
     .es101-card a {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      justify-content: space-between; /* Progress at top, title at bottom */
       align-items: center;
       color: #ffffff;
       font-weight: 700;
@@ -43,7 +43,7 @@
       width: 160px;   /* Square size */
       height: 160px;  /* Square size */
       font-size: 1rem;
-      padding: 15px 10px 10px;
+      padding: 15px 10px; /* Top and side padding only */
       transition: transform 0.2s ease;
     }
 
@@ -107,7 +107,7 @@
         width: 140px;
         height: 140px;
         font-size: 0.95rem;
-        padding: 12px 8px 8px;
+        padding: 12px 8px;
       }
       .es101-objectives {
         max-width: 140px;
