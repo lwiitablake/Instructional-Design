@@ -352,19 +352,21 @@
   </script>
 
 
- 
 
-<script>
+  <script>
   function sendHeight() {
-    const bodyHeight = document.body.scrollHeight;
-    window.parent.postMessage({ type: 'setHeight', height: bodyHeight }, '*');
+    const height = document.body.scrollHeight;
+    window.parent.postMessage({ type: 'setHeight', height: height }, '*');
   }
 
   window.addEventListener('load', sendHeight);
   window.addEventListener('resize', sendHeight);
+
+  // Optional: detect content changes dynamically
+  const observer = new ResizeObserver(sendHeight);
+  observer.observe(document.body);
 </script>
 
-  
   
 </body>
 </html>
