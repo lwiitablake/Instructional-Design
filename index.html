@@ -25,7 +25,7 @@
   .es101-card a {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     color: #ffffff;
     font-weight: 700;
@@ -47,9 +47,8 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 100%;
-    width: 100%;
     align-items: center;
+    width: 100%;
   }
 
   .es101-progress-group {
@@ -88,7 +87,6 @@
 
   .es101-progress-text {
     font-size: 13px;
-    display: block;
     color: #000;
   }
 
@@ -233,7 +231,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const circles = mod.querySelectorAll(".es101-progress-circle");
     const progressText = mod.nextElementSibling;
 
-    // Restore saved progress from localStorage
     const saved = JSON.parse(localStorage.getItem(`progress_${moduleId}`)) || [];
     saved.forEach(i => circles[i].classList.add("filled"));
     updateProgressText();
@@ -247,7 +244,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       circle.addEventListener("click", toggle);
 
-      // Keyboard accessibility: toggle with Enter or Space
       circle.addEventListener("keydown", (e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
