@@ -415,16 +415,12 @@
 })();
 </script>
 
+
 <script>
-  // Only needed for Canvas iframe height calculation
+  // Auto-send page height to Canvas parent
   window.addEventListener("load", () => {
     const bodyHeight = document.body.scrollHeight;
-    const iframeMessage = {
-      type: "setHeight",
-      height: bodyHeight
-    };
-    // Send height to parent (Canvas page)
-    window.parent.postMessage(iframeMessage, "*");
+    window.parent.postMessage({ type: "setHeight", height: bodyHeight }, "*");
   });
 </script>
 
