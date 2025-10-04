@@ -25,8 +25,8 @@
 
     .es101-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
       justify-items: center;
     }
 
@@ -38,12 +38,12 @@
       color: #ffffff;
       font-weight: 700;
       text-decoration: none;
-      padding: 25px 10px 15px;
       border-radius: 12px;
       text-align: center;
-      width: 320px;
-      height: 180px;
-      font-size: 1.2rem;
+      width: 160px;   /* Square size */
+      height: 160px;  /* Square size */
+      font-size: 1rem;
+      padding: 15px 10px 10px;
       transition: transform 0.2s ease;
     }
 
@@ -54,15 +54,15 @@
     .es101-progress {
       display: flex;
       justify-content: center;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
     }
 
     .es101-progress-circle {
-      width: 16px;
-      height: 16px;
+      width: 14px;
+      height: 14px;
       border: 2px solid #ffffff;
       border-radius: 50%;
-      margin: 0 4px;
+      margin: 0 3px;
       background-color: transparent;
       cursor: pointer;
       transition: background-color 0.2s ease;
@@ -73,19 +73,19 @@
     }
 
     .es101-progress-text {
-      font-size: 14px;
-      margin-bottom: 10px;
+      font-size: 13px;
+      margin-bottom: 6px;
       display: block;
       color: #ffffff;
     }
 
     .es101-objectives {
-      font-size: 15px;
+      font-size: 14px;
       text-align: center;
-      margin-top: 10px;
+      margin-top: 8px;
       color: #333;
       line-height: 1.5;
-      max-width: 320px;
+      max-width: 160px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -96,6 +96,24 @@
     .m3 a { background-color: #0b605f; }
     .m4 a { background-color: #2f5879; }
     .m5 a { background-color: #00458a; }
+
+    /* Responsive adjustments */
+    @media (max-width: 500px) {
+      .es101-container {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 15px;
+      }
+      .es101-card a {
+        width: 140px;
+        height: 140px;
+        font-size: 0.95rem;
+        padding: 12px 8px 8px;
+      }
+      .es101-objectives {
+        max-width: 140px;
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -182,7 +200,6 @@
         const circles = mod.querySelectorAll(".es101-progress-circle");
         const progressText = mod.nextElementSibling;
 
-        // Load saved progress
         const saved = JSON.parse(localStorage.getItem(`progress_${moduleId}`)) || [];
         saved.forEach(i => circles[i].classList.add("filled"));
         updateProgressText();
