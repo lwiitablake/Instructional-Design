@@ -1,25 +1,372 @@
-<div style="font-family: Arial, sans-serif; max-width: 100%; margin: auto; padding: 0 20px;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Earth Science 101</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      margin: 40px auto;
+      max-width: 900px;
+      padding: 0 20px;
+      color: #1e1e1e;
+      line-height: 1.6;
+    }
 
-  <!-- Canvas iframe embedding GitHub page -->
-  <iframe 
-    id="es101-iframe"
-    src="https://lwiitablake.github.io/Instructional-Design/index.html"
-    style="width: 100%; border:0; display:block;"
-    title="Earth Science 101 Modules"
-    loading="lazy"
-  ></iframe>
+    h2 {
+      text-align: center;
+      color: #1e1e1e;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      font-weight: 700;
+    }
+
+    .es101-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; 
+      gap: 20px;
+    }
+
+    .es101-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .es101-card a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 12px;
+      text-align: center;
+      width: 140px;
+      height: 140px;
+      font-size: 0.95rem;
+      padding: 12px 8px;
+      transition: transform 0.2s ease;
+    }
+
+    .es101-card a:hover {
+      transform: scale(1.03);
+    }
+
+    .es101-button-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    .es101-progress-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 8px; 
+    }
+
+    .es101-progress {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 4px;
+    }
+
+    .es101-progress-circle {
+      width: 14px;
+      height: 14px;
+      border: 2px solid #000000; 
+      border-radius: 50%;
+      margin: 0 3px;
+      background-color: transparent;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      outline: none;
+    }
+
+    .es101-progress-circle.filled {
+      background-color: #000000; 
+    }
+
+    .es101-progress-circle:focus {
+      outline: 2px dashed #000;
+      outline-offset: 2px;
+    }
+
+    .es101-progress-text {
+      font-size: 13px;
+      display: block;
+      color: #000000; 
+      text-align: center;
+    }
+
+    .es101-objectives {
+      font-size: 14px;
+      text-align: center;
+      margin-top: 8px;
+      color: #333;
+      line-height: 1.5;
+      max-width: 160px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .m1 a { background-color: #196719; }
+    .m2 a { background-color: #21633e; }
+    .m3 a { background-color: #0b605f; }
+    .m4 a { background-color: #2f5879; }
+    .m5 a { background-color: #00458a; }
+
+    .tool {
+      display: flex;
+      width: 160px;
+      height: 90px;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 12px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .tool:hover {
+      transform: scale(1.03);
+    }
+
+    @media (max-width: 500px) {
+      .es101-card a {
+        width: 120px;
+        height: 120px;
+        font-size: 0.9rem;
+        padding: 10px 6px;
+      }
+      .es101-objectives {
+        max-width: 140px;
+        font-size: 13px;
+      }
+      .tool {
+        width: 140px;
+        height: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Section -->
+  <div style="font-family: Arial, sans-serif; max-width: 900px; margin: auto;">
+  <a class="skip-link sr-only" style="position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;" href="#modules-section">Skip to Modules</a>
+  <a class="skip-link sr-only" style="position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;" href="#resources-section">Skip to Other Resources</a>
+
+  <div style="text-align: center;">
+    <!-- Updated image section with width fix -->
+    <h2 style="margin: 0 0 10px 0; padding: 0;">
+      <img style="border-radius: 12px; display: block; margin: 0 auto; max-width: 100%; height: auto; box-sizing: border-box;" 
+           role="presentation" 
+           src="Canvas_HomePage_Updated_Image_Cropped.png" 
+           alt="Earth Science 101 Banner" />
+    </h2>
+
+    <!-- Course title and intro -->
+    <h2 style="margin-bottom: 30px;">🌎<br />Welcome to Earth Science 101</h2>
+    <p style="font-size: 16px; margin: 0 auto 40px;">
+      Welcome to <strong>Earth Science 101</strong>. This course explores the processes that shape our planet, from plate tectonics and rock formation to the atmosphere, oceans, and climate. Our goal is to build a strong foundation in Earth science concepts while encouraging you to think critically about the dynamic systems that affect life on Earth.
+    </p>
+  </div>
+
+  <!-- Breadcrumb and Modules section -->
+  <nav style="text-align: center; margin-bottom: 15px; font-size: 14px; color: #888;" aria-label="Breadcrumb">
+    <span style="color: #000000;">Home &gt; <span>Modules</span></span>
+  </nav>
+  <h2 id="modules-section" style="text-align: center; margin: 20px 0 10px;">Modules</h2>
+  <p style="font-size: 16px; text-align: center; margin-bottom: 30px;">
+    Each <strong>module</strong> contains learning objectives, readings, multimedia content, assignments, and discussions.
+  </p>
+</div>
+
+
+  <!-- Modules -->
+  <div class="es101-container">
+
+    <!-- Module 1 -->
+    <div class="es101-card m1">
+      <div class="es101-progress-group">
+        <div class="es101-progress" data-module="m1">
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+        </div>
+        <span class="es101-progress-text" aria-live="polite"></span>
+      </div>
+      <a href="https://canvas.instructure.com/courses/12988987/modules/20955574" target="_top" aria-label="Module 1: Earth Systems">
+        <div class="es101-button-inner"><span>Module 1<br>Earth Systems</span></div>
+      </a>
+      <p class="es101-objectives"><strong>Objectives:</strong> Understand Earth's layers, the rock cycle, and energy systems that drive geological processes.</p>
+    </div>
+
+    <!-- Module 2 -->
+    <div class="es101-card m2">
+      <div class="es101-progress-group">
+        <div class="es101-progress" data-module="m2">
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+        </div>
+        <span class="es101-progress-text" aria-live="polite"></span>
+      </div>
+      <a href="https://canvas.instructure.com/courses/12988987/modules/20955580" target="_top" aria-label="Module 2: Plate Tectonics">
+        <div class="es101-button-inner"><span>Module 2<br>Plate Tectonics</span></div>
+      </a>
+      <p class="es101-objectives"><strong>Objectives:</strong> Explain plate boundaries, mantle convection, and how tectonic movement shapes Earth’s surface.</p>
+    </div>
+
+    <!-- Module 3 -->
+    <div class="es101-card m3">
+      <div class="es101-progress-group">
+        <div class="es101-progress" data-module="m3">
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+        </div>
+        <span class="es101-progress-text" aria-live="polite"></span>
+      </div>
+      <a href="https://canvas.instructure.com/courses/12988987/modules/20968541" target="_top" aria-label="Module 3: Rocks and Minerals">
+        <div class="es101-button-inner"><span>Module 3<br>Rocks &amp; Minerals</span></div>
+      </a>
+      <p class="es101-objectives"><strong>Objectives:</strong> Identify common rock types, classify minerals, and connect rock formation to geological cycles.</p>
+    </div>
+
+    <!-- Module 4 -->
+    <div class="es101-card m4">
+      <div class="es101-progress-group">
+        <div class="es101-progress" data-module="m4">
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+        </div>
+        <span class="es101-progress-text" aria-live="polite"></span>
+      </div>
+      <a href="https://canvas.instructure.com/courses/12988987/modules/20968544" target="_top" aria-label="Module 4: Atmosphere">
+        <div class="es101-button-inner"><span>Module 4<br>Atmosphere</span></div>
+      </a>
+      <p class="es101-objectives"><strong>Objectives:</strong> Describe atmospheric layers, weather systems, and interactions with Earth's surface and oceans.</p>
+    </div>
+
+    <!-- Module 5 -->
+    <div class="es101-card m5">
+      <div class="es101-progress-group">
+        <div class="es101-progress" data-module="m5">
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+          <span class="es101-progress-circle" tabindex="0"></span>
+        </div>
+        <span class="es101-progress-text" aria-live="polite"></span>
+      </div>
+      <a href="https://canvas.instructure.com/courses/12988987/modules/20968545" target="_top" aria-label="Module 5: Oceans and Climate">
+        <div class="es101-button-inner"><span>Module 5<br>Oceans &amp; Climate</span></div>
+      </a>
+      <p class="es101-objectives"><strong>Objectives:</strong> Examine ocean currents, global heat transport, and how oceans influence climate stability.</p>
+    </div>
+
+  </div>
+
+  <!-- Other Resources Section -->
+    <nav style="text-align: center; margin: 60px 0 15px; font-size: 14px; color: #888;" aria-label="Breadcrumb">
+      <span style="color: #000000;">Home &gt; <span>Other Resources</span></span>
+    </nav>
+
+    <h2 id="resources-section" style="text-align: center; margin: 20px 0 20px;">Other Course Resources</h2>
+    <p style="font-size: 16px; margin: 0px auto 20px; text-align: center;">
+      In addition to modules, you’ll frequently use the following course areas:
+    </p>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;" role="navigation" aria-label="Course tools">
+      <a class="tool" style="background: #4F1A9E;" href="#">Assignments</a>
+      <a class="tool" style="background: #701192;" href="#">Discussions</a>
+      <a class="tool" style="background: #871490;" href="#">Quizzes</a>
+    </div>
+
+    <p style="margin-top: 40px; font-size: 14px; color: #444; text-align: center;">
+      Use this homepage as your central hub. Each week, check the module overview first, then move through readings, discussions, and assignments in order.
+    </p>
+
+  </div>
 
   <script>
-    // Adjust iframe height automatically based on GitHub content
-    window.addEventListener('message', (event) => {
-      if(event.data.type === 'setHeight') {
-        const iframe = document.getElementById('es101-iframe');
-        iframe.style.height = event.data.height + 'px';
-      }
-    });
+    document.addEventListener("DOMContentLoaded", () => {
+      const modules = document.querySelectorAll(".es101-progress");
 
-    // Optional: set a minimum height for initial display
-    document.getElementById('es101-iframe').style.minHeight = "800px";
+      modules.forEach(mod => {
+        const moduleId = mod.dataset.module;
+        const circles = mod.querySelectorAll(".es101-progress-circle");
+        const progressText = mod.nextElementSibling;
+
+        // Restore saved progress from localStorage
+        const saved = JSON.parse(localStorage.getItem(`progress_${moduleId}`)) || [];
+        saved.forEach(i => circles[i].classList.add("filled"));
+        updateProgressText();
+
+        circles.forEach((circle, index) => {
+          const toggle = () => {
+            circle.classList.toggle("filled");
+            saveProgress();
+            updateProgressText();
+          };
+
+          circle.addEventListener("click", toggle);
+          circle.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              toggle();
+            }
+          });
+        });
+
+        function saveProgress() {
+          const filled = [];
+          circles.forEach((c, i) => {
+            if (c.classList.contains("filled")) filled.push(i);
+          });
+          localStorage.setItem(`progress_${moduleId}`, JSON.stringify(filled));
+        }
+
+        function updateProgressText() {
+          const count = mod.querySelectorAll(".filled").length;
+          progressText.textContent = `${count} / ${circles.length} steps completed`;
+        }
+      });
+    });
   </script>
 
-</div>
+
+
+  <script>
+  function sendHeight() {
+    const height = document.body.scrollHeight;
+    window.parent.postMessage({ type: 'setHeight', height: height }, '*');
+  }
+
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+
+  // Optional: detect content changes dynamically
+  const observer = new ResizeObserver(sendHeight);
+  observer.observe(document.body);
+</script>
+
+  
+</body>
+</html>
