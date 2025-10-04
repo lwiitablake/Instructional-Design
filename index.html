@@ -367,5 +367,17 @@
   </script>
 
 
+  <script>
+  window.addEventListener("load", () => {
+    const resizeObserver = new ResizeObserver(() => {
+      document.body.style.overflow = "hidden"; // hides internal scrollbar
+      const height = document.body.scrollHeight;
+      parent.postMessage({ frameHeight: height }, "*");
+    });
+    resizeObserver.observe(document.body);
+  });
+</script>
+
+
 </body>
 </html>
