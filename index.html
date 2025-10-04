@@ -8,11 +8,12 @@
     body {
       font-family: Arial, sans-serif;
       background-color: #ffffff;
-      margin: 40px auto;
-      max-width: 900px;
-      padding: 0 20px;
+      margin: 0;
+      padding: 20px;
+      max-width: 100%;
       color: #1e1e1e;
       line-height: 1.6;
+      box-sizing: border-box;
     }
 
     h2 {
@@ -34,6 +35,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      flex: 1 1 150px;
+      max-width: 180px;
     }
 
     .es101-card a {
@@ -46,8 +49,8 @@
       text-decoration: none;
       border-radius: 12px;
       text-align: center;
-      width: 140px;
-      height: 140px;
+      width: 100%;
+      height: auto;
       font-size: 0.95rem;
       padding: 12px 8px;
       transition: transform 0.2s ease;
@@ -82,17 +85,16 @@
     .es101-progress-circle {
       width: 14px;
       height: 14px;
-      border: 2px solid #000000; 
+      border: 2px solid #000; 
       border-radius: 50%;
       margin: 0 3px;
       background-color: transparent;
       cursor: pointer;
       transition: background-color 0.2s ease;
-      outline: none;
     }
 
     .es101-progress-circle.filled {
-      background-color: #000000; 
+      background-color: #000; 
     }
 
     .es101-progress-circle:focus {
@@ -143,8 +145,6 @@
 
     @media (max-width: 500px) {
       .es101-card a {
-        width: 120px;
-        height: 120px;
         font-size: 0.9rem;
         padding: 10px 6px;
       }
@@ -157,53 +157,60 @@
         height: 80px;
       }
     }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
   </style>
 </head>
 <body>
 
   <!-- Top Section -->
-  <div style="font-family: Arial, sans-serif; max-width: 900px; margin: auto;">
-  <a class="skip-link sr-only" style="position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;" href="#modules-section">Skip to Modules</a>
-  <a class="skip-link sr-only" style="position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;" href="#resources-section">Skip to Other Resources</a>
+  <div style="max-width: 900px; margin: auto;">
+    <a class="skip-link sr-only" href="#modules-section">Skip to Modules</a>
+    <a class="skip-link sr-only" href="#resources-section">Skip to Other Resources</a>
 
-  <div style="text-align: center;">
-    <!-- Updated image section with width fix -->
-    <h2 style="margin: 0 0 10px 0; padding: 0;">
-      <img style="border-radius: 12px; display: block; margin: 0 auto; max-width: 100%; height: auto; box-sizing: border-box;" 
-           role="presentation" 
-           src="Canvas_HomePage_Updated_Image_Cropped.png" 
-           alt="Earth Science 101 Banner" />
-    </h2>
+    <div style="text-align: center;">
+      <h2 style="margin: 0 0 10px 0; padding: 0;">
+        <img style="border-radius: 12px; display: block; margin: 0 auto; max-width: 100%; height: auto;" 
+             role="presentation" 
+             src="Canvas_HomePage_Updated_Image_Cropped.png" 
+             alt="Earth Science 101 Banner" />
+      </h2>
 
-    <!-- Course title and intro -->
-    <h2 style="margin-bottom: 30px;">🌎<br />Welcome to Earth Science 101</h2>
-    <p style="font-size: 16px; margin: 0 auto 40px;">
-      Welcome to <strong>Earth Science 101</strong>. This course explores the processes that shape our planet, from plate tectonics and rock formation to the atmosphere, oceans, and climate. Our goal is to build a strong foundation in Earth science concepts while encouraging you to think critically about the dynamic systems that affect life on Earth.
+      <h2 style="margin-bottom: 30px;">🌎<br />Welcome to Earth Science 101</h2>
+      <p style="font-size: 16px; margin: 0 auto 40px;">
+        Welcome to <strong>Earth Science 101</strong>. This course explores the processes that shape our planet, from plate tectonics and rock formation to the atmosphere, oceans, and climate. Our goal is to build a strong foundation in Earth science concepts while encouraging you to think critically about the dynamic systems that affect life on Earth.
+      </p>
+    </div>
+
+    <nav style="text-align: center; margin-bottom: 15px; font-size: 14px; color: #888;" aria-label="Breadcrumb">
+      <span style="color: #000000;">Home &gt; <span>Modules</span></span>
+    </nav>
+    <h2 id="modules-section" style="text-align: center; margin: 20px 0 10px;">Modules</h2>
+    <p style="font-size: 16px; text-align: center; margin-bottom: 30px;">
+      Each <strong>module</strong> contains learning objectives, readings, multimedia content, assignments, and discussions.
     </p>
   </div>
 
-  <!-- Breadcrumb and Modules section -->
-  <nav style="text-align: center; margin-bottom: 15px; font-size: 14px; color: #888;" aria-label="Breadcrumb">
-    <span style="color: #000000;">Home &gt; <span>Modules</span></span>
-  </nav>
-  <h2 id="modules-section" style="text-align: center; margin: 20px 0 10px;">Modules</h2>
-  <p style="font-size: 16px; text-align: center; margin-bottom: 30px;">
-    Each <strong>module</strong> contains learning objectives, readings, multimedia content, assignments, and discussions.
-  </p>
-</div>
-
-
-  <!-- Modules -->
-  <div class="es101-container">
+  <!-- Modules Section -->
+  <div class="es101-container" role="list">
 
     <!-- Module 1 -->
-    <div class="es101-card m1">
+    <div class="es101-card m1" role="listitem">
       <div class="es101-progress-group">
-        <div class="es101-progress" data-module="m1">
-          <span class="es101-progress-circle" tabindex="0"></span>
-          <span class="es101-progress-circle" tabindex="0"></span>
-          <span class="es101-progress-circle" tabindex="0"></span>
-          <span class="es101-progress-circle" tabindex="0"></span>
+        <div class="es101-progress" data-module="m1" aria-label="Progress for Module 1" role="group">
+          <button class="es101-progress-circle" aria-label="Step 1" type="button"></button>
+          <button class="es101-progress-circle" aria-label="Step 2" type="button"></button>
+          <button class="es101-progress-circle" aria-label="Step 3" type="button"></button>
+          <button class="es101-progress-circle" aria-label="Step 4" type="button"></button>
         </div>
         <span class="es101-progress-text" aria-live="polite"></span>
       </div>
@@ -214,13 +221,13 @@
     </div>
 
     <!-- Module 2 -->
-    <div class="es101-card m2">
+    <div class="es101-card m2" role="listitem">
       <div class="es101-progress-group">
-        <div class="es101-progress" data-module="m2">
-          <span class="es101-progress-circle" tabindex="0"></span>
-          <span class="es101-progress-circle" tabindex="0"></span>
-          <span class="es101-progress-circle" tabindex="0"></span>
-          <span class="es101-progress-circle" tabindex="0"></span>
+        <div class="es101-progress" data-module="m2" aria-label="Progress for Module 2" role="group">
+          <button class="es101-progress-circle" aria-label="Step 1" type="button"></button>
+          <button class="es101-progress-circle" aria-label="Step 2" type="button"></button>
+          <button class="es101-progress-circle" aria-label="Step 3" type="button"></button>
+          <button class="es101-progress-circle" aria-label="Step 4" type="button"></button>
         </div>
         <span class="es101-progress-text" aria-live="polite"></span>
       </div>
@@ -231,13 +238,13 @@
     </div>
 
     <!-- Module 3 -->
-    <div class="es101-card m3">
+    <div class="es101-card m3" role="listitem">
       <div class="es101-progress-group">
-        <div class="es101-progress" data-module="m3">
-          <span class="es101-progress-circle" tabindex="0"></span>
-          <span class="es101-progress-circle" tabindex="0"></span>
-          <span class="es101-progress-circle" tabindex="0"></span>
-          <span class="es101-progress-circle" tabindex="0"></span>
+        <div class="es101-progress" data-module="m3" aria-label="Progress for Module 3" role="group">
+          <button class="es101-progress-circle" aria-label="Step 1" type="button"></button>
+          <button class="es101-progress-circle" aria-label="Step 2" type="button"></button>
+          <button class="es101-progress-circle" aria-label="Step 3" type="button"></button>
+          <button class="es101-progress-circle" aria-label="Step 4" type="button"></button>
         </div>
         <span class="es101-progress-text" aria-live="polite"></span>
       </div>
@@ -248,13 +255,13 @@
     </div>
 
     <!-- Module 4 -->
-    <div class="es101-card m4">
+    <div class="es101-card m4" role="listitem">
       <div class="es101-progress-group">
-        <div class="es101-progress" data-module="m4">
-          <span class="es101-progress-circle" tabindex="0"></span>
-          <span class="es101-progress-circle" tabindex="0"></span>
-          <span class="es101-progress-circle" tabindex="0"></span>
-          <span class="es101-progress-circle" tabindex="0"></span>
+        <div class="es101-progress" data-module="m4" aria-label="Progress for Module 4" role="group">
+          <button class="es101-progress-circle" aria-label="Step 1" type="button"></button>
+          <button class="es101-progress-circle" aria-label="Step 2" type="button"></button>
+          <button class="es101-progress-circle" aria-label="Step 3" type="button"></button>
+          <button class="es101-progress-circle" aria-label="Step 4" type="button"></button>
         </div>
         <span class="es101-progress-text" aria-live="polite"></span>
       </div>
@@ -265,13 +272,13 @@
     </div>
 
     <!-- Module 5 -->
-    <div class="es101-card m5">
+    <div class="es101-card m5" role="listitem">
       <div class="es101-progress-group">
-        <div class="es101-progress" data-module="m5">
-          <span class="es101-progress-circle" tabindex="0"></span>
-          <span class="es101-progress-circle" tabindex="0"></span>
-          <span class="es101-progress-circle" tabindex="0"></span>
-          <span class="es101-progress-circle" tabindex="0"></span>
+        <div class="es101-progress" data-module="m5" aria-label="Progress for Module 5" role="group">
+          <button class="es101-progress-circle" aria-label="Step 1" type="button"></button>
+          <button class="es101-progress-circle" aria-label="Step 2" type="button"></button>
+          <button class="es101-progress-circle" aria-label="Step 3" type="button"></button>
+          <button class="es101-progress-circle" aria-label="Step 4" type="button"></button>
         </div>
         <span class="es101-progress-text" aria-live="polite"></span>
       </div>
@@ -284,83 +291,84 @@
   </div>
 
   <!-- Other Resources Section -->
-    <nav style="text-align: center; margin: 60px 0 15px; font-size: 14px; color: #888;" aria-label="Breadcrumb">
-      <span style="color: #000000;">Home &gt; <span>Other Resources</span></span>
-    </nav>
+  <nav style="text-align: center; margin: 60px 0 15px; font-size: 14px; color: #888;" aria-label="Breadcrumb">
+    <span style="color: #000000;">Home &gt; <span>Other Resources</span></span>
+  </nav>
 
-    <h2 id="resources-section" style="text-align: center; margin: 20px 0 20px;">Other Course Resources</h2>
-    <p style="font-size: 16px; margin: 0px auto 20px; text-align: center;">
-      In addition to modules, you’ll frequently use the following course areas:
-    </p>
+  <h2 id="resources-section" style="text-align: center; margin: 20px 0 20px;">Other Course Resources</h2>
+  <p style="font-size: 16px; margin: 0px auto 20px; text-align: center;">
+    In addition to modules, you’ll frequently use the following course areas:
+  </p>
 
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;" role="navigation" aria-label="Course tools">
-      <a class="tool" style="background: #4F1A9E;" href="#">Assignments</a>
-      <a class="tool" style="background: #701192;" href="#">Discussions</a>
-      <a class="tool" style="background: #871490;" href="#">Quizzes</a>
-    </div>
-
-    <p style="margin-top: 40px; font-size: 14px; color: #444; text-align: center;">
-      Use this homepage as your central hub. Each week, check the module overview first, then move through readings, discussions, and assignments in order.
-    </p>
-
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;" role="navigation" aria-label="Course tools">
+    <a class="tool" style="background: #4F1A9E;" href="#">Assignments</a>
+    <a class="tool" style="background: #701192;" href="#">Discussions</a>
+    <a class="tool" style="background: #871490;" href="#">Quizzes</a>
   </div>
 
+  <p style="margin-top: 40px; font-size: 14px; color: #444; text-align: center;">
+    Use this homepage as your central hub. Each week, check the module overview first, then move through readings, discussions, and assignments in order.
+  </p>
+
+  <!-- Progress Circle Script -->
   <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const modules = document.querySelectorAll(".es101-progress");
+    document.addEventListener("DOMContentLoaded", () => {
+      const modules = document.querySelectorAll(".es101-progress");
 
-  modules.forEach(mod => {
-    const moduleId = mod.dataset.module;
-    const circles = mod.querySelectorAll(".es101-progress-circle");
-    const progressText = mod.nextElementSibling;
+      modules.forEach(mod => {
+        const moduleId = mod.dataset.module;
+        const circles = Array.from(mod.querySelectorAll(".es101-progress-circle"));
+        const progressText = mod.nextElementSibling;
 
-    // Restore saved progress from localStorage
-    const saved = JSON.parse(localStorage.getItem(`progress_${moduleId}`)) || [];
-    saved.forEach(i => circles[i].classList.add("filled"));
-    updateProgressText();
-
-    // Only toggle on mouse click, not keyboard
-    circles.forEach((circle, index) => {
-      circle.addEventListener("click", () => {
-        circle.classList.toggle("filled");
-        saveProgress();
+        const saved = JSON.parse(localStorage.getItem(`progress_${moduleId}`)) || [];
+        saved.forEach(i => {
+          if (circles[i]) circles[i].classList.add("filled");
+        });
         updateProgressText();
+
+        circles.forEach((circle, index) => {
+          circle.addEventListener("click", () => toggleStep(index));
+          circle.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              toggleStep(index);
+            }
+          });
+
+          function toggleStep(idx) {
+            if (!circles[idx]) return;
+            circles[idx].classList.toggle("filled");
+            saveProgress();
+            updateProgressText();
+          }
+
+          function saveProgress() {
+            const filled = circles
+              .map((c, i) => c.classList.contains("filled") ? i : null)
+              .filter(i => i !== null);
+            localStorage.setItem(`progress_${moduleId}`, JSON.stringify(filled));
+          }
+
+          function updateProgressText() {
+            const count = circles.filter(c => c.classList.contains("filled")).length;
+            progressText.textContent = `${count} / ${circles.length} steps completed`;
+          }
+        });
       });
     });
+  </script>
 
-    function saveProgress() {
-      const filled = [];
-      circles.forEach((c, i) => {
-        if (c.classList.contains("filled")) filled.push(i);
-      });
-      localStorage.setItem(`progress_${moduleId}`, JSON.stringify(filled));
-    }
-
-    function updateProgressText() {
-      const count = mod.querySelectorAll(".filled").length;
-      progressText.textContent = `${count} / ${circles.length} steps completed`;
-    }
-  });
-});
-</script>
-
-
-
-
+  <!-- Canvas iframe resizing -->
   <script>
-  function sendHeight() {
-    const height = document.body.scrollHeight;
-    window.parent.postMessage({ type: 'setHeight', height: height }, '*');
-  }
+    function sendHeight() {
+      const height = Math.max(document.body.scrollHeight, 1000);
+      window.parent.postMessage({ type: 'setHeight', height: height }, '*');
+    }
+    window.addEventListener('load', sendHeight);
+    window.addEventListener('resize', sendHeight);
+    const observer = new ResizeObserver(sendHeight);
+    observer.observe(document.body);
+  </script>
 
-  window.addEventListener('load', sendHeight);
-  window.addEventListener('resize', sendHeight);
-
-  // Optional: detect content changes dynamically
-  const observer = new ResizeObserver(sendHeight);
-  observer.observe(document.body);
-</script>
-
-  
 </body>
 </html>
